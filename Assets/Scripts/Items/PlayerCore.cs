@@ -47,5 +47,27 @@ public class PlayerCore : MonoBehaviour {
     {
 
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        var gObj = col.transform.gameObject;
+        Debug.Log(gObj.layer);
+        
+        if (gObj.layer == 10) //if collides with player
+        {
+            var item = gObj.GetComponent<Weapon>();
+            item.GetComponent<Rigidbody2D>().isKinematic = true;
+            item.GetComponent<Collider2D>().enabled = false;
+            item.transform.parent = this.transform;
+            item.transform.localScale = Vector3.one;
+            item.transform.localPosition = Vector3.zero;
+
+            heldItems.Add(item);
+            item.SetOwner(this);
+
+
+
+        }
+    }
 }
 

@@ -10,6 +10,7 @@ public class Weapon : ItemCore {
     public float attackInterval;
 
 
+
     protected bool readyForAttack = true;
     protected float attackTimer;
 
@@ -42,6 +43,8 @@ public class Weapon : ItemCore {
         base.Use();
     }
 
+
+
     protected virtual void DestroyWeapon()
     {
 
@@ -52,5 +55,6 @@ public class Weapon : ItemCore {
         var insProj = Instantiate(projectile, transform.position + transform.localScale.x * Vector3.right * 0.5f, Quaternion.identity) as Projectile;
 
         insProj.SetDirection(transform.localScale.x * Vector2.right);
+        insProj.SetOwner(weaponOwner);
     }
 }

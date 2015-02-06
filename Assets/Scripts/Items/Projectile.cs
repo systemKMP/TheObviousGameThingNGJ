@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
     public float projectileSpeed;
     public float survivalTime = 1.0f;
 
     public int projectileDamage = 1;
+
+    public bool damageSelf = false;
 
     private PlayerCore projectileOwner;
 
@@ -26,8 +29,16 @@ public class Projectile : MonoBehaviour {
         var gObj = col.gameObject;
         if (gObj.layer == 1 << 8) //if collides with player
         {
-            gObj.GetComponent<PlayerCore>().Damage(projectileDamage);
+            var playerCore = gObj.GetComponent<PlayerCore>();
+            if (damageSelf || playerCore != projectileOwner)
+            {
+                playerCore.Damage(projectileDamage);
+            }
         }
     }
 
+    public void SetOwner(PlayerCore projectileOwner)
+    {
+        this.projectileOwner = projectileOwner;
+    }
 }
