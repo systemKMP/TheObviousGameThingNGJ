@@ -22,8 +22,11 @@ public class PlayerCore : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Use Items"))
+        //TODO: if (Input.GetButtonDown("Use Items"))
+
+        if (Input.GetKey(KeyCode.Space))
         {
+            Debug.Log("USE");
             foreach (var item in heldItems)
             {
                 item.Use();
