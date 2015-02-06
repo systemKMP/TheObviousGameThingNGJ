@@ -20,19 +20,6 @@ public class PlayerCore : MonoBehaviour {
 
     public int MaxJumps { get; set; }
 
-    void Update()
-    {
-        //TODO: if (Input.GetButtonDown("Use Items"))
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            foreach (var item in heldItems)
-            {
-                item.Use();
-            }
-        }
-    }
-
 
     internal void Damage(int projectileDamage)
     {
@@ -73,6 +60,14 @@ public class PlayerCore : MonoBehaviour {
     public void RemoveWeapon(ItemCore item)
     {
         heldItems.Remove(item);
+    }
+
+    public void UseItems()
+    {
+        foreach (var item in heldItems)
+        {
+            item.Use();
+        }
     }
 }
 

@@ -53,9 +53,9 @@ public class Weapon : ItemCore {
 
     protected virtual void FireProjectile()
     {
-        var insProj = Instantiate(projectile, transform.position + transform.localScale.x * Vector3.right * 0.5f, Quaternion.identity) as Projectile;
+        var insProj = Instantiate(projectile, transform.position + transform.parent.localScale.x * Vector3.right * 0.7f, Quaternion.identity) as Projectile;
 
-        insProj.SetDirection(transform.localScale.x * Vector2.right);
+        insProj.SetDirection(transform.parent.localScale.x * Vector2.right);
         insProj.SetOwner(weaponOwner);
     }
 }

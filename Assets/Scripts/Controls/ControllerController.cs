@@ -9,6 +9,13 @@ public class ControllerController : MonoBehaviour
 
     private float _presign = 0;
 
+    PlayerCore core;
+
+    void Start()
+    {
+        core = gameObject.GetComponent<PlayerCore>();
+    }
+
     public void Update()
     {
         // Walk
@@ -17,9 +24,10 @@ public class ControllerController : MonoBehaviour
         // Jump
         if (Input.GetKey("joystick " + Controller + " button 0")) Player.Jump();
 
-        // Shoot
-        var sign = Mathf.Sign(Input.GetAxis("Joystick_" + Controller + "_Trigger"));
-        if (sign != _presign && sign == -1) Debug.Log("BANG!"); // TODO shoot
-        _presign = sign;
+
+        if (Input.GetAxis("Joystick_" + Controller + "_Trigger") < 0)
+        {
+            core.UseItems();
+        }
     }
 }
