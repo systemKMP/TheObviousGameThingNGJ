@@ -69,5 +69,10 @@ public class PlayerCore : MonoBehaviour {
 
         }
     }
+
+    public void RemoveWeapon(ItemCore item)
+    {
+        heldItems.Remove(item);
+    }
 }
 

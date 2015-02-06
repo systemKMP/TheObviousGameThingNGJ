@@ -47,7 +47,8 @@ public class Weapon : ItemCore {
 
     protected virtual void DestroyWeapon()
     {
-
+        weaponOwner.RemoveWeapon(this);
+        Destroy(this);
     }
 
     protected virtual void FireProjectile()
