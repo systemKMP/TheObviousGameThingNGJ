@@ -8,6 +8,8 @@ public class Weapon : ItemCore {
     public Projectile projectile; //Item to instantiate on attack;
 
     public float attackInterval;
+
+
     protected bool readyForAttack = true;
     protected float attackTimer;
 
@@ -15,8 +17,8 @@ public class Weapon : ItemCore {
     {
         if (!readyForAttack)
         {
-            attackInterval -= Time.deltaTime;
-            if (attackInterval <= 0.0f)
+            attackTimer -= Time.deltaTime;
+            if (attackTimer <= 0.0f)
             {
                 readyForAttack = true;
             }
@@ -28,7 +30,7 @@ public class Weapon : ItemCore {
         if (readyForAttack)
         {
             FireProjectile();
-            readyForAttack = true;
+            readyForAttack = false;
             attackTimer = attackInterval;
             bullets--;
             if (bullets == 0)

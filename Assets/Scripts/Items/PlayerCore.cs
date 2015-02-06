@@ -9,7 +9,7 @@ public class PlayerCore : MonoBehaviour {
     
     public List<ItemCore> heldItems;
 
-    public int currentHelath;
+    public int currentHealth;
     public int MaxHealth { get; set; }
 
     public int Armor { get; set; }
@@ -26,7 +26,6 @@ public class PlayerCore : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("USE");
             foreach (var item in heldItems)
             {
                 item.Use();
@@ -34,5 +33,19 @@ public class PlayerCore : MonoBehaviour {
         }
     }
 
+
+    internal void Damage(int projectileDamage)
+    {
+        currentHealth -= projectileDamage;
+        if (currentHealth <= 0)
+        {
+            KillPlayer();
+        }
+    }
+
+    private void KillPlayer()
+    {
+
+    }
 }
 
