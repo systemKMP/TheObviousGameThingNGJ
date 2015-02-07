@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
+    public float BlinkSpeed = 1.5f;
+
     public void Update()
     {
         var players = new Dictionary<int, PlayerScore>();
@@ -66,7 +68,7 @@ public class UI : MonoBehaviour
             }
             if (join != null)
             {
-                join.enabled = !players.ContainsKey(i) || players[i].core == null;
+                join.enabled = (!players.ContainsKey(i) || players[i].core == null) && Mathf.FloorToInt(Time.time * BlinkSpeed) % 2 == 0;
             }
         }
     }
