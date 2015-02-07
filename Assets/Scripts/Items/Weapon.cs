@@ -14,8 +14,9 @@ public class Weapon : ItemCore {
     protected bool readyForAttack = true;
     protected float attackTimer;
 
-    void Update()
+    public override void Update() 
     {
+        base.Update();
         if (!readyForAttack)
         {
             attackTimer -= Time.deltaTime;

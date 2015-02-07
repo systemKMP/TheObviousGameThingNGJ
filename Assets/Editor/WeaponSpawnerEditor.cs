@@ -20,12 +20,12 @@ public class WeaponSpawnerEditor : Editor
                 GUILayout.EndHorizontal();
                 break;
             }
-            spawner.Weapons[i] = (Weapon)EditorGUILayout.ObjectField("", spawner.Weapons[i], typeof(Weapon), false);
+            spawner.Weapons[i] = (ItemCore)EditorGUILayout.ObjectField("", spawner.Weapons[i], typeof(ItemCore), false);
             spawner.Rates[i] = EditorGUILayout.FloatField("", spawner.Rates[i]);
             GUILayout.EndHorizontal();
         }
         GUILayout.BeginHorizontal();
-        var newWeapon = (Weapon)EditorGUILayout.ObjectField("New Weapon:", null, typeof(Weapon), false);
+        var newWeapon = (ItemCore)EditorGUILayout.ObjectField("New Weapon:", null, typeof(ItemCore), false);
         GUILayout.EndHorizontal();
         GUILayout.Space(5);
         GUILayout.BeginHorizontal();
