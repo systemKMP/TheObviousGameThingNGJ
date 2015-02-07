@@ -22,9 +22,9 @@ public class ControllerController : MonoBehaviour
         Player.Walk(Input.GetAxis("Joystick_" + Controller + "_Left_x"));
 
         // Jump
-        if (Input.GetKey("joystick " + Controller + " button 0")) Player.Jump();
+        if (Input.GetKeyDown("joystick " + Controller + " button 0")) Player.Jump();
 
-
+        // Shoot
         if (Input.GetAxis("Joystick_" + Controller + "_Trigger") < 0)
         {
             core.UseItems();
