@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
@@ -82,6 +83,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        _jumps = MaxJumps;
+        if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.6f))
+        {
+            _jumps = MaxJumps;
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.9f))
+        {
+            _direction = 0;
+        }
     }
 }

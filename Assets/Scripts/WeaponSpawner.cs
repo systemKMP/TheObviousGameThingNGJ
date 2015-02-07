@@ -5,7 +5,7 @@ using System.Collections;
 
 public class WeaponSpawner : MonoBehaviour
 {
-    public List<Weapon> Weapons = new List<Weapon>();
+    public List<ItemCore> Weapons = new List<ItemCore>();
     public List<float> Rates = new List<float>();
     public float SpawnMin = 2;
     public float SpawnMax = 4;

@@ -5,6 +5,8 @@ using System.Collections;
 public class CameraFollower : MonoBehaviour
 {
     public float Lerp = 0.3f;
+    public float Player1Margin = 10;
+    public float MorePlayerMargin = 4;
 
     public void Update()
     {
@@ -15,7 +17,7 @@ public class CameraFollower : MonoBehaviour
 
             var maxDist = players.Max(player => Vector2.Distance(player.transform.position, transform.position));
             var cam = GetComponentInChildren<Camera>();
-            if (cam != null) cam.orthographicSize = maxDist + 4;
+            if (cam != null) cam.orthographicSize = maxDist + (players.Length==1?Player1Margin:MorePlayerMargin);
         }
     }
 
