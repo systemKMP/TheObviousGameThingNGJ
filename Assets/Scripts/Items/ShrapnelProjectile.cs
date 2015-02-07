@@ -37,7 +37,6 @@ public class ShrapnelProjectile : Projectile {
 
                 Vector2 shotDirection = new Vector2(Mathf.Acos(angle), Mathf.Asin(angle));
 
-                Debug.Log(intialVelocity.x);
                 if (intialVelocity.x < 0.0f)
                 {
                    

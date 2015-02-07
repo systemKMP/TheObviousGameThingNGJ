@@ -50,4 +50,13 @@ public class Projectile : MonoBehaviour
         this.projectileOwner = projectileOwner;
         Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), projectileOwner.GetComponent<Collider2D>());
     }
+
+
+    public virtual void OnDestroy()
+    {
+        if (HitPrefab != null)
+        {
+            Instantiate(HitPrefab, transform.position, Quaternion.identity);
+        }
+    }
 }

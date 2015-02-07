@@ -89,6 +89,7 @@ public class Weapon : ItemCore {
                 yield return new WaitForEndOfFrame();
         }
     }
+
 }
 
 public class ProjectileDef
