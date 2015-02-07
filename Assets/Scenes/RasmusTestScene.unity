@@ -363,14 +363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
-  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
-  - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
-  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
-  - 2
-  - 2
-  - 2
   - 2
   SpawnMin: 2
   SpawnMax: 4
@@ -385,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &113303629
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +522,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 202, y: 37}
-  m_SizeDelta: {x: 300, y: 80}
+  m_SizeDelta: {x: 300, y: 1000}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &122603351
 MonoBehaviour:
@@ -543,10 +537,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-  m_Color: {r: .650980413, g: 1, b: .635294139, a: 1}
+  m_Color: {r: .977941155, g: .0647166967, b: .159187868, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -556,8 +550,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'defeat
+  m_Text: 'press X to
 
+    respawn
 
     9'
 --- !u!222 &122603352
@@ -688,7 +683,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -206, y: 42}
-  m_SizeDelta: {x: 300, y: 80}
+  m_SizeDelta: {x: 300, y: 1000}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &259537051
 MonoBehaviour:
@@ -703,10 +698,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-  m_Color: {r: 1, g: .968627453, b: .392156869, a: 1}
+  m_Color: {r: .977941155, g: .0647166967, b: .159187868, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -716,8 +711,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'defeat
+  m_Text: 'press X to
 
+    respawn
 
     9'
 --- !u!222 &259537052
@@ -772,7 +768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!82 &325340820
 AudioSource:
   m_ObjectHideFlags: 0
@@ -877,7 +873,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!82 &348975736
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1450,14 +1446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
-  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
-  - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
-  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
-  - 2
-  - 2
-  - 2
   - 2
   SpawnMin: 2
   SpawnMax: 4
@@ -1472,7 +1462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1 &795749936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!82 &795749939
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2138,7 +2128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!82 &1167119265
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2477,7 +2467,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!61 &1258301783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2551,7 +2541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 14
 --- !u!1001 &1298621137
 Prefab:
   m_ObjectHideFlags: 0
@@ -3954,7 +3944,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &1482711781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,14 +4315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
-  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
-  - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
-  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
-  - 2
-  - 2
-  - 2
   - 2
   SpawnMin: 2
   SpawnMax: 4
@@ -4347,7 +4331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
 --- !u!1 &1587637948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,14 +4361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
-  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
-  - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
-  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
-  - 2
-  - 2
-  - 2
   - 2
   SpawnMin: 2
   SpawnMax: 4
@@ -4399,7 +4377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &1588388530
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,7 +4411,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -205, y: -57}
-  m_SizeDelta: {x: 300, y: 80}
+  m_SizeDelta: {x: 300, y: 1000}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1588388532
 MonoBehaviour:
@@ -4448,10 +4426,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-  m_Color: {r: 1, g: .709803939, b: 1, a: 1}
+  m_Color: {r: .977941155, g: .0647166967, b: .159187868, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -4461,8 +4439,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'defeat
+  m_Text: 'press X to
 
+    respawn
 
     9'
 --- !u!222 &1588388533
@@ -4590,7 +4569,7 @@ Transform:
   m_Children:
   - {fileID: 244320911}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!114 &1610219745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5057,29 +5036,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11474898, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
       propertyPath: m_Text
-      value: 'defeat
+      value: 'press X to
 
+        respawn
 
         9'
       objectReference: {fileID: 0}
     - target: {fileID: 11474886, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
       propertyPath: m_Text
-      value: 'defeat
+      value: 'press X to
 
+        respawn
 
         9'
       objectReference: {fileID: 0}
     - target: {fileID: 11474884, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
       propertyPath: m_Text
-      value: 'defeat
+      value: 'press X to
 
+        respawn
 
         9'
       objectReference: {fileID: 0}
     - target: {fileID: 11474874, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
       propertyPath: m_Text
-      value: 'defeat
+      value: 'press X to
 
+        respawn
 
         9'
       objectReference: {fileID: 0}
@@ -5162,6 +5145,86 @@ Prefab:
     - target: {fileID: 22477978, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -92
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474886, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474898, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474884, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474874, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474886, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.r
+      value: .977941155
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474886, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.g
+      value: .0647166967
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474886, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.b
+      value: .159187868
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474898, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.r
+      value: .977941155
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474898, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.g
+      value: .0647166967
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474898, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.b
+      value: .159187868
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474884, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.r
+      value: .977941155
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474884, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.g
+      value: .0647166967
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474884, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.b
+      value: .159187868
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474874, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.r
+      value: .977941155
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474874, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.g
+      value: .0647166967
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474874, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_Color.b
+      value: .159187868
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474882, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474894, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474880, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474870, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3d347615950ded4fbcbe8893e5a4b5a, type: 2}
@@ -5399,7 +5462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!82 &1924990739
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5657,7 +5720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!82 &2074559372
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5750,7 +5813,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 198, y: -60}
-  m_SizeDelta: {x: 300, y: 80}
+  m_SizeDelta: {x: 300, y: 1000}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2098483579
 MonoBehaviour:
@@ -5765,10 +5828,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-  m_Color: {r: .635294139, g: 1, b: 1, a: 1}
+  m_Color: {r: .977941155, g: .0647166967, b: .159187868, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0f00349073f686349a50b68216b05873, type: 3}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -5778,8 +5841,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'defeat
+  m_Text: 'press X to
 
+    respawn
 
     9'
 --- !u!222 &2098483580

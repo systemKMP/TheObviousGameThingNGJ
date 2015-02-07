@@ -80,6 +80,23 @@ public class UI : MonoBehaviour
                     overText.rectTransform.localScale = (players.ContainsKey(i) && players[i].core == null)
                         ? Vector2.one * (0.9f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.1f))
                         : Vector2.zero;
+                    if (players.ContainsKey(i) && players[i].core == null)
+                    {
+                        if (!CountDown.ContainsKey(i)) CountDown[i] = 13;
+                        CountDown[i] -= Time.deltaTime;
+                        if (CountDown[i] < 0)
+                        {
+                            ScoreTracker.Instance.Leave(i);
+                        }
+                        else
+                        {
+                            overText.text = "press X to\nrespawn\n" + Mathf.FloorToInt(CountDown[i]);
+                        }
+                    }
+                    else
+                    {
+                        if (CountDown.ContainsKey(i)) CountDown.Remove(i);
+                    }
                 }
             }
             if (logo != null)
@@ -91,13 +108,17 @@ public class UI : MonoBehaviour
                     if (Hit.ContainsKey(i) && Hit[i] > 0)
                     {
                         container.localPosition = Vector2.right * Hit[i] * Mathf.Cos(Time.time * 100) * ShakeAmount;
-                        logo.color = Color.Lerp(originalColors[i], new Color(-1, -1, -1, 1), Hit[i] / 0.5f);
+                        logo.color = Color.Lerp(originalColors[i], Color.black, Hit[i] / 0.5f);
                         Hit[i] -= Time.deltaTime;
                     }
                     else
                     {
                         container.localPosition = Vector2.zero;
                         logo.color = originalColors[i];
+                    }
+                    if (players.ContainsKey(i) && players[i].core == null)
+                    {
+                        logo.color = new Color(0.1f,0.1f,0.1f);
                     }
                 }
                 logo.enabled = players.ContainsKey(i);

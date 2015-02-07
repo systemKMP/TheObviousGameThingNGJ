@@ -55,7 +55,11 @@ public class ScoreTracker {
             }
         }
     }
-    
+
+    public void Leave(int id)
+    {
+        playerScores.RemoveAll(score => score.playerId == id);
+    }
 }
 
 public class PlayerScore {
