@@ -28,6 +28,7 @@ public class ShrapnelProjectile : Projectile {
 
     void OnDestroy()
     {
+
         if ((splitOnPlayerCollision && collidedWithPlayer) || !collidedWithPlayer)
         {
             List<ProjectileDef> projectilesToSpawn = new List<ProjectileDef>();
@@ -79,7 +80,7 @@ public class ShrapnelProjectile : Projectile {
             {
                 playerCore.Damage(projectileDamage, projectileOwner.Controller.Index);
                 collidedWithPlayer = true;
-                Destroy(this.gameObject);
+                ProperDestroy();
             }
         }
     }

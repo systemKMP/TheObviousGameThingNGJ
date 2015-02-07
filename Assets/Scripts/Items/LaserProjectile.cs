@@ -28,11 +28,12 @@ public class LaserProjectile : Projectile
         _line.SetPosition(1, end);
     }
 
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
         if (_direction != Vector2.zero)
         {
-            var w = Curve.Evaluate(_time / survivalTime)*Width;
+            var w = Curve.Evaluate(_time / survivalTime) * Width;
             _line.SetWidth(w, w);
             if (!_hit && _time / survivalTime > HitTime)
             {
@@ -41,8 +42,8 @@ public class LaserProjectile : Projectile
                 if (hit.transform != null && (damageSelf || hit.transform != projectileOwner.transform))
                 {
                     var core = hit.transform.GetComponent<PlayerCore>();
-                    if(core!=null)core.Damage(projectileDamage, projectileOwner.Controller.Index);
-                    Destroy(Instantiate(HitPrefab,hit.point,Quaternion.identity),2);
+                    if (core != null) core.Damage(projectileDamage, projectileOwner.Controller.Index);
+                    Destroy(Instantiate(HitPrefab, hit.point, Quaternion.identity), 2);
                 }
                 _hit = true;
             }

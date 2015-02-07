@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: d8a1d836b4b4bef438b109b584f88565
+guid: 595c0eebdb5abca4a928339e69ac83d8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tex_grenade_projectile_0
+    21300000: tex_mine_projectile_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,19 +38,19 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: tex_grenade_projectile_0
+    - name: tex_mine_projectile_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
-        width: 9
-        height: 9
+        x: 4
+        y: 2
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
