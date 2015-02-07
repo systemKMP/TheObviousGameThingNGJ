@@ -7,11 +7,17 @@ public class CameraFollower : MonoBehaviour
     public float Lerp = 0.3f;
     public float Player1Margin = 10;
     public float MorePlayerMargin = 4;
+    private Vector3 _target;
+
+    public void Start()
+    {
+        _target = transform.position;
+    }
 
     public void Update()
     {
         var players = GameObject.FindGameObjectsWithTag("Player");
-        if (players.Length > 0) { 
+        if (players.Length > 0) {
             var average = players.Aggregate(Vector3.zero, (prev, player) => prev + player.transform.position)/players.Length;
             transform.position = Vector3.Lerp(transform.position,new Vector3(average.x,average.y,transform.position.z), Lerp);
 
