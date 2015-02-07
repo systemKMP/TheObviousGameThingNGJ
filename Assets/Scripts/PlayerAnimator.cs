@@ -2,19 +2,18 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerAnimator : MonoBehaviour
 {
-    public Dictionary<string, Sprite> Sprites = new Dictionary<string, Sprite>();
-    private SpriteRenderer _renderer;
+    private Animator _animator;
 
-    public void Start()
+    public void Awake()
     {
-        _renderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
-
-    public void ChangeState(string spriteName)
+    public void Update()
     {
-        _renderer.sprite = Sprites[spriteName];
+        _animator.SetFloat("Speed", rigidbody2D.velocity.magnitude);
     }
 }

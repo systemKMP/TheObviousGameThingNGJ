@@ -15,7 +15,8 @@ GameObject:
   - 114: {fileID: 11476090}
   - 114: {fileID: 11454758}
   - 212: {fileID: 21283480}
-  - 114: {fileID: 11488244}
+  - 95: {fileID: 9552966}
+  - 114: {fileID: 11485278}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.1331997, y: 21.2816849, z: 0}
+  m_LocalPosition: {x: 17.404604, y: .504577696, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,6 +62,21 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 4.21999979, y: 2.55999994}
   m_Center: {x: .649999976, y: -.0799999982}
+--- !u!95 &9552966
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08676bff2e696d34d99250fff4cd1838, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11454758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,7 +137,7 @@ MonoBehaviour:
   HeldItems: []
   CurrentHealth: 0
   Controller: {fileID: 0}
---- !u!114 &11488244
+--- !u!114 &11485278
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
