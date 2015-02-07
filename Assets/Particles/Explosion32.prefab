@@ -28,7 +28,7 @@ GameObject:
   - 198: {fileID: 19838186}
   - 199: {fileID: 19938186}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Explosion32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138184}
   lengthInSec: .5
-  startDelay: .300000012
+  startDelay: 0
   speed: 1
   randomSeed: 0
   looping: 0
