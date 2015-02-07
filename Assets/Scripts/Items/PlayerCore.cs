@@ -16,10 +16,16 @@ public class PlayerCore : MonoBehaviour {
 
     public PlayerController Controller;
 
+    private Color _originalColor;
+    private SpriteRenderer _sprite;
+    private float _hit;
+
     void Start()
     {
         Controller = gameObject.GetComponent<PlayerController>();
         CurrentHealth = MaxHealth;
+        _sprite = GetComponent<SpriteRenderer>();
+        _originalColor = _sprite.color;
 
         for (int i = 0; i < HeldItems.Count; i++)
         {
@@ -34,10 +40,22 @@ public class PlayerCore : MonoBehaviour {
         }
     }
 
+    public virtual void Update()
+    {
+        if (_hit > 0)
+        {
+            _sprite.color = Color.Lerp(_originalColor, Color.black, _hit / 0.5f);
+            _hit -= Time.deltaTime;
+        }
+        else
+        {
+            _sprite.color = _originalColor;
+        }
+    }
 
     public void Damage(int projectileDamage, int killerId)
     {
-        UI.Instance.Hit[Controller.Index] = 0.5f;
+        UI.Instance.Hit[Controller.Index] = _hit = 0.5f;
         CurrentHealth -= projectileDamage;
         if (CurrentHealth <= 0)
         {

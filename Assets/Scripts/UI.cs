@@ -76,13 +76,12 @@ public class UI : MonoBehaviour
                     {
                         container.localPosition = Vector2.right * Hit[i] * Mathf.Cos(Time.time * 100) * ShakeAmount;
                         logo.color = Color.Lerp(originalColors[i], Color.black, Hit[i]/0.5f);
-                        Debug.Log(logo.material.color);
                         Hit[i] -= Time.deltaTime;
                     }
                     else
                     {
                         container.localPosition = Vector2.zero;
-                        logo.material.color = originalColors[i];
+                        logo.color = originalColors[i];
                     }
                 }
                 logo.enabled = players.ContainsKey(i);
