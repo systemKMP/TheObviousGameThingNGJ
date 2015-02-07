@@ -65,8 +65,11 @@ public class Projectile : MonoBehaviour
 
     public virtual void SetDirection(Vector2 direction, float angularVelocity = 0.0f)
     {
-        rigidbody2D.velocity = projectileSpeed * direction.normalized;
-        rigidbody2D.angularVelocity = angularVelocity;
+        if (rigidbody2D != null)
+        {
+            rigidbody2D.velocity = projectileSpeed * direction.normalized;
+            rigidbody2D.angularVelocity = angularVelocity;
+        }
 
         if (direction.x < 0)
         {
@@ -78,7 +81,6 @@ public class Projectile : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D col)
     {
-
         var gObj = col.gameObject;
         if (gObj.layer == 8) //if collides with player
         {
@@ -91,10 +93,14 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void SetOwner(PlayerCore projectileOwner)
+    public void SetOwner(ref PlayerCore owner)
     {
-        this.projectileOwner = projectileOwner;
-        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), projectileOwner.GetComponent<Collider2D>());
+        
+        this.projectileOwner = owner;
+        if (!damageSelf)
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), owner.GetComponent<Collider2D>());
+        }
     }
 
     public void FreeTrail()

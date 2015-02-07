@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: a1d0c800c338fb643a5c5a18a77e9992
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tex_laser_gun_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +43,16 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: tex_laser_gun_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

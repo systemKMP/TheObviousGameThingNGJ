@@ -61,7 +61,7 @@ public class ShrapnelProjectile : Projectile {
                 var angVelocity = Random.Range(-angularStrengthMax, angularStrengthMax);
                 insProj.SetDirection(proj.velocity, angVelocity);
 
-                insProj.SetOwner(proj.owner);
+                insProj.SetOwner(ref proj.owner);
 
                 
             }

@@ -12,21 +12,24 @@ public class Explosive : Projectile {
         currentTimer = collisionValidityTimer;
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         currentTimer -= Time.deltaTime;
     }
 
-    protected override void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         var gObj = col.gameObject;
+        //Debug.Log(gObj.layer);
         if (gObj.layer == 8)
         {
             var playerCore = gObj.GetComponent<PlayerCore>();
-            if ((damageSelf || playerCore != projectileOwner) && projectileOwner != null && currentTimer >= 0.0f)
+            if (playerCore != null && (damageSelf || playerCore != projectileOwner) && currentTimer >= 0.0f)
             {
+                //Debug.Log(projectileOwner);
                 playerCore.Damage(projectileDamage, projectileOwner.Controller.Index);
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
             }
         }
     }

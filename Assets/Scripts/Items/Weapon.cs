@@ -70,7 +70,7 @@ public class Weapon : ItemCore {
         }
         Screenshaker.Shake(0.4f, Vector2.right * transform.parent.localScale.x);
         
-        insProj.SetOwner(weaponOwner);
+        insProj.SetOwner(ref weaponOwner);
     }
 
     protected virtual IEnumerator SpawnProjectiles(List<ProjectileDef> projectilesToSpawn)
@@ -81,7 +81,7 @@ public class Weapon : ItemCore {
 
                 insProj.SetDirection(proj.velocity);
 
-            insProj.SetOwner(proj.owner);
+            insProj.SetOwner(ref proj.owner);
 
             
 
