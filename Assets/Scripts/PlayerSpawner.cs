@@ -29,8 +29,24 @@ public class PlayerSpawner : MonoBehaviour
                 Quaternion.identity);
             var controller = player.GetComponent<ControllerController>() ??
                              player.gameObject.AddComponent<ControllerController>();
+            controller.Player = player;
             controller.Controller = i;
             Players[i] = player;
+        }
+        
+        if (Players.ContainsKey(0) && Players[0] == null) Players.Remove(0);
+        if (!Players.ContainsKey(0) && Input.GetKey(KeyCode.Space))
+        {
+            var keyboardplayer =
+                (PlayerMovement)
+                    Instantiate(PlayerPrefab, SpawnPoints[Random.Range(0, SpawnPoints.Count)].transform.position,
+                        Quaternion.identity);
+            var keyboardcontroller = keyboardplayer.GetComponent<KeyboardController>() ??
+                                     keyboardplayer.gameObject.AddComponent<KeyboardController>();
+            keyboardcontroller.Player = keyboardplayer;
+            keyboardcontroller.WalkInputAxis = "Horizontal";
+            keyboardcontroller.JumpInput = KeyCode.W;
+            Players[0] = keyboardplayer;
         }
     }
 
