@@ -5,7 +5,7 @@ public class KeyboardController : PlayerController
 {
     public string WalkInputAxis;
     public KeyCode JumpInput;
-    public KeyCode ShootInput;
+    public KeyCode ShootInput = KeyCode.T;
 
     public void Update()
     {
