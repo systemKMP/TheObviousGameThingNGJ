@@ -39,6 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11dfc181ab3606c49901a393e703109d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PartyTime: 5
+  Shake: 10
+  Laser: {fileID: 11474882, guid: 48ac0579383a3634e92d8d260ee82bf1, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

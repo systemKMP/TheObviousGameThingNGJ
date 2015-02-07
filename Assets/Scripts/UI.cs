@@ -50,6 +50,12 @@ public class UI : MonoBehaviour
             var logo = FindChild("Player " + (i) + " Logo", transform) == null
                 ? null
                 : FindChild("Player " + (i) + " Logo", transform).GetComponent<Image>();
+            var title = FindChild("Title", transform) == null
+                ? null
+                : FindChild("Title", transform).GetComponent<Image>();
+            var hint = FindChild("Hint", transform) == null
+                ? null
+                : FindChild("Hint", transform).GetComponent<Text>();
 
             if (players.ContainsKey(i))
             {
@@ -92,7 +98,21 @@ public class UI : MonoBehaviour
                     ? Vector2.one * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.2f))
                     : Vector2.zero;
             }
+            if (title != null)
+            {
+                if (hint != null)
+                {
+                    hint.rectTransform.localScale = Vector2.one*(0.8f + Mathf.Abs(Mathf.Cos(Time.time*2)*0.2f));
+                }
+                title.rectTransform.localScale = Vector3.Lerp(title.rectTransform.localScale, 
+                    ShowTitle() ? Vector3.one : Vector3.zero, 0.02f); // TODO pretty transition
+            }
         }
+    }
+
+    private bool ShowTitle()
+    {
+        return ScoreTracker.Instance.Scores.Count == 0;
     }
 
     private static Transform FindChild(string name, Transform transform)

@@ -24,7 +24,7 @@ public class PlayerSpawner : MonoBehaviour
         for (int i = 1; i <= 8; i++)
         {
             if (Players.ContainsKey(i) && Players[i] == null) Players.Remove(i);
-            if (Players.ContainsKey(i) || !Input.GetKey("joystick " + i + " button 0")) continue;
+            if (Players.ContainsKey(i) || !Input.GetKey("joystick " + i + " button 2")) continue;
 
             var player = (PlayerMovement)Instantiate(PlayerPrefab, SpawnPoints[Random.Range(0, SpawnPoints.Count)].transform.position,
                 Quaternion.identity);
