@@ -34,7 +34,6 @@ public class ScoreTracker {
         {
             scoreBoard = new PlayerScore() {playerId = id, core = core};
             playerScores.Add(scoreBoard);
-            Debug.Log("Player "+id+" Joined");
         }
         else
         {
@@ -55,8 +54,6 @@ public class ScoreTracker {
                 player.deaths++;
             }
         }
-
-        Debug.Log(killerId + " killed " + casualtyId);
     }
     
 }

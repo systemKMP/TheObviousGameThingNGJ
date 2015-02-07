@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8b19ec0fac316478cf230d9c0dd939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPrefab: {fileID: 121632, guid: b51b9361a278e684f920d39c2bcd5f06, type: 2}
+  HitPrefab: {fileID: 172136, guid: b51b9361a278e684f920d39c2bcd5f06, type: 2}
   projectileSpeed: 20
   survivalTime: 1
   projectileDamage: 0

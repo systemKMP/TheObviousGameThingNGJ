@@ -59,7 +59,7 @@ MonoBehaviour:
   HitPrefab: {fileID: 152556, guid: 4cf523b6d0e16bd4d83c4bdd692e8ed7, type: 2}
   projectileSpeed: 0
   survivalTime: 1
-  projectileDamage: 1
+  projectileDamage: 20
   damageSelf: 0
   Width: .400000006
   Curve:
