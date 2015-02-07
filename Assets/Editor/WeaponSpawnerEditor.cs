@@ -29,6 +29,10 @@ public class WeaponSpawnerEditor : Editor
         GUILayout.EndHorizontal();
         GUILayout.Space(5);
         GUILayout.BeginHorizontal();
+        GUILayout.Label("Min Spawn Time");
+        GUILayout.Label("Max Spawn Time");
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
         spawner.SpawnMin = EditorGUILayout.FloatField("", spawner.SpawnMin);
         spawner.SpawnMax = EditorGUILayout.FloatField("", spawner.SpawnMax);
         GUILayout.EndHorizontal();
