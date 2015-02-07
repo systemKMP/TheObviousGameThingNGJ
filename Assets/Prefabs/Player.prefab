@@ -16,6 +16,7 @@ GameObject:
   - 95: {fileID: 9552966}
   - 114: {fileID: 11485278}
   - 60: {fileID: 6020404}
+  - 82: {fileID: 8206686}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -30,7 +31,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 264.700012, y: 110.379997, z: 0}
+  m_LocalPosition: {x: 102.011169, y: 7.83788776, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,22 +62,80 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: 2.4637146, y: -.646408081}
+    - - {x: 2.49008179, y: -.751860619}
       - {x: 1.49569702, y: -.383560181}
-      - {x: .727416992, y: -.501708984}
-      - {x: -.688201904, y: -.536308289}
-      - {x: -1.49487305, y: -.578941345}
-      - {x: -1.68765259, y: -.992469788}
+      - {x: .701057434, y: -.475346088}
+      - {x: -.688201904, y: -.48358202}
+      - {x: -2.06167603, y: -.420762539}
+      - {x: -2.21492004, y: -.662930489}
       - {x: -1.4750061, y: -1.18441772}
       - {x: -.636444092, y: -1.82978058}
       - {x: -.844665527, y: -2.18990326}
-      - {x: -.375518799, y: -2.81095886}
-      - {x: .0328674316, y: -2.82277679}
-      - {x: .574645996, y: -2.80548096}
-      - {x: .78012085, y: -1.78646851}
-      - {x: 1.42663574, y: -1.34339905}
-      - {x: 1.97741699, y: -1.53997803}
-      - {x: 2.49917603, y: -1.08647156}
+      - {x: -.626205444, y: -2.55163145}
+      - {x: -.0449295044, y: -2.80548859}
+      - {x: .643798828, y: -2.59801912}
+      - {x: .964660645, y: -2.35327625}
+      - {x: 1.51890564, y: -1.85748053}
+      - {x: 1.97741699, y: -1.48725128}
+      - {x: 2.4068985, y: -1.1919241}
+--- !u!82 &8206686
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9552966
 Animator:
   serializedVersion: 3
@@ -104,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mover: {fileID: 11476092}
+  Audio: {fileID: 0}
   WalkCurve:
     serializedVersion: 2
     m_Curve:
@@ -189,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mover: {fileID: 11476090}
+  Player: {fileID: 0}
 --- !u!212 &21283480
 SpriteRenderer:
   m_ObjectHideFlags: 1

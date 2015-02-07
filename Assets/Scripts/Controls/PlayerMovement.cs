@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Movement Mover;
 
+    public AudioSource Audio;
+
     public AnimationCurve WalkCurve;
     public float MaxWalkSpeed;
     public float WalkFloatiness;
@@ -54,6 +56,9 @@ public class PlayerMovement : MonoBehaviour
         {
             _walk = desiredWalk;
         }
+
+        //if(Audio.isPlaying && _walk == 0)Audio.Play();
+        //if(!Audio.isPlaying && _walk != 0)Audio.Stop();
 
         Mover.Move = new Vector2(_walk, 0);
         if(_jump != 0)rigidbody2D.velocity = Vector2.up*_jump + Vector2.right*rigidbody2D.velocity.x;
