@@ -23,12 +23,13 @@ public class PlayerMovement : MonoBehaviour
     private float _jump;
     private int _jumps;
     private bool _stopped;
-    private readonly List<Transform> _grounds = new List<Transform>(); 
+    private readonly List<Transform> _grounds = new List<Transform>();
 
     public void Update()
     {
         if (Mover == null) { Debug.LogWarning("You haven't attached a movement script to me, moron"); return; }
 
+        if (IsGrounded()) _jumps = MaxJumps;
         if (!_stopped && _direction == 0)
         {
             Mover.rigidbody2D.AddForce(new Vector2(-Mover.rigidbody2D.velocity.x, 0) * Mover.rigidbody2D.mass, ForceMode2D.Impulse);
@@ -92,7 +93,16 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return _grounds.Count > 0;
+        var hit = new[]
+        {
+            Physics2D.Raycast(transform.position+Vector3.right, -Vector2.up, float.PositiveInfinity,
+                1 << LayerMask.NameToLayer("Terrain")),
+            Physics2D.Raycast(transform.position, -Vector2.up, float.PositiveInfinity,
+                1 << LayerMask.NameToLayer("Terrain")),
+            Physics2D.Raycast(transform.position-Vector3.right, -Vector2.up, float.PositiveInfinity,
+                1 << LayerMask.NameToLayer("Terrain"))
+        };
+        return hit.Count(d => d.distance<3) > 2;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -100,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.3f))
         {
             _jumps = MaxJumps;
-            _grounds.Add(collision.transform);
+            if (!_grounds.Contains(collision.transform)) _grounds.Add(collision.transform);
         }
     }
 
