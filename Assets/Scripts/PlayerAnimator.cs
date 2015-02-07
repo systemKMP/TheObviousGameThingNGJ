@@ -6,6 +6,8 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerAnimator : MonoBehaviour
 {
+    public PlayerMovement Mover;
+
     private Animator _animator;
 
     public void Awake()
@@ -14,6 +16,8 @@ public class PlayerAnimator : MonoBehaviour
     }
     public void Update()
     {
-        _animator.SetFloat("Speed", rigidbody2D.velocity.magnitude);
+        _animator.SetFloat("Speed", Mathf.Abs(rigidbody2D.velocity.x));
+        _animator.SetFloat("VerticalSpeed", rigidbody2D.velocity.y);
+        _animator.SetBool("Grounded", Mover.IsGrounded());
     }
 }

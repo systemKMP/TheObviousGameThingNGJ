@@ -373,10 +373,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
   - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
-  - 1
-  - 5
+  - 2
+  - 2
+  - 2
+  - 2
   SpawnMin: 2
   SpawnMax: 4
 --- !u!4 &95429091
@@ -941,6 +945,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11497784, guid: bcdf2813f47d7cb4dbe5b10787aa518a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcdf2813f47d7cb4dbe5b10787aa518a, type: 2}
   m_RootGameObject: {fileID: 1610219743}
@@ -1118,10 +1126,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
   - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
-  - 1
-  - 5
+  - 2
+  - 2
+  - 2
+  - 2
   SpawnMin: 2
   SpawnMax: 4
 --- !u!4 &753037464
@@ -2195,10 +2207,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
   - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
-  - 1
-  - 5
+  - 2
+  - 2
+  - 2
+  - 2
   SpawnMin: 2
   SpawnMax: 4
 --- !u!4 &1569495514
@@ -2243,10 +2259,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
   - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
-  - 1
-  - 5
+  - 2
+  - 2
+  - 2
+  - 2
   SpawnMin: 2
   SpawnMax: 4
 --- !u!4 &1587637950
@@ -2400,7 +2420,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 575004699}
   m_GameObject: {fileID: 1610219743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0431b7d30bda5b419d8d205869739e9, type: 3}
   m_Name: 
