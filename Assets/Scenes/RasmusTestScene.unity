@@ -640,6 +640,10 @@ Prefab:
       propertyPath: Lerp
       value: .100000001
       objectReference: {fileID: 0}
+    - target: {fileID: 11497784, guid: bcdf2813f47d7cb4dbe5b10787aa518a, type: 2}
+      propertyPath: Player1Margin
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcdf2813f47d7cb4dbe5b10787aa518a, type: 2}
   m_RootGameObject: {fileID: 1610219743}
@@ -1285,6 +1289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lerp: .100000001
+  Player1Margin: 20
+  MorePlayerMargin: 4
 --- !u!1001 &1878666853
 Prefab:
   m_ObjectHideFlags: 0
