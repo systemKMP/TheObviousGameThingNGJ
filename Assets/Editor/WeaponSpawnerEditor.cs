@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-[CustomEditor(typeof(WeaponSpawner))]
+//[CustomEditor(typeof(WeaponSpawner))]
 public class WeaponSpawnerEditor : Editor
 {
     public override void OnInspectorGUI()

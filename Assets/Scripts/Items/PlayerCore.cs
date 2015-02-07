@@ -9,8 +9,8 @@ public class PlayerCore : MonoBehaviour {
     
     public List<ItemCore> HeldItems;
 
-    public int CurrentHealth;
-    public int MaxHealth { get; set; }
+    public int MaxHealth;
+    public int CurrentHealth { get; set; }
 
     public int Armor { get; set; }
 
@@ -19,6 +19,19 @@ public class PlayerCore : MonoBehaviour {
     void Start()
     {
         Controller = gameObject.GetComponent<PlayerController>();
+        CurrentHealth = MaxHealth;
+
+        for (int i = 0; i < HeldItems.Count; i++)
+        {
+            HeldItems[i] = Instantiate(HeldItems[i]) as ItemCore;
+            HeldItems[i].GetComponent<Rigidbody2D>().isKinematic = true;
+            HeldItems[i].GetComponent<Collider2D>().enabled = false;
+            HeldItems[i].transform.parent = this.transform;
+            HeldItems[i].transform.localScale = Vector3.one;
+            HeldItems[i].transform.localPosition = Vector3.zero;
+
+            HeldItems[i].SetOwner(this);
+        }
     }
 
 

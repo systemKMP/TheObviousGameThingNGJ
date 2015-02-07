@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Weapon : ItemCore {
 
-    public int bullets = -1; // -1 for infinity, 0 for item loss
+    public int ammo = 10; // -1 for infinity, 0 for item loss
 
     public Projectile projectile; //Item to instantiate on attack;
 
@@ -33,8 +33,8 @@ public class Weapon : ItemCore {
             FireProjectile(index);
             readyForAttack = false;
             attackTimer = attackInterval;
-            bullets--;
-            if (bullets == 0)
+            ammo--;
+            if (ammo == 0)
             {
                 DestroyWeapon();
             }

@@ -34,7 +34,9 @@ public class WeaponSpawner : MonoBehaviour
                     if (result < accum)
                     {
                         _currentWeapon = (Weapon) Instantiate(Weapons[i], transform.position, transform.rotation);
+                        break;
                     }
+                    
                 }
             }
         }

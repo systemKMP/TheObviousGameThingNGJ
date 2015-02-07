@@ -106,9 +106,9 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-  MaxWalkSpeed: 4
+  MaxWalkSpeed: 6
   WalkFloatiness: 0
-  JumpForce: 5
+  JumpForce: 7
   MaxJumps: 3
 --- !u!114 &11476092
 MonoBehaviour:
@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerID: 1
-  HeldItems: []
-  CurrentHealth: 0
+  HeldItems:
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
+  MaxHealth: 1000
   Controller: {fileID: 0}
 --- !u!114 &11485278
 MonoBehaviour:

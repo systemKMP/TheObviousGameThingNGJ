@@ -21,6 +21,12 @@ public class Projectile : MonoBehaviour
     public virtual void SetDirection(Vector2 direction)
     {
         rigidbody2D.velocity = projectileSpeed * direction.normalized;
+        if (direction.x < 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x *= -1.0f;
+            transform.localScale = scale;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
