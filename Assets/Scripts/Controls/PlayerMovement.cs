@@ -55,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
             _walk = desiredWalk;
         }
 
-        Mover.Move = new Vector2(_walk, _jump);
+        Mover.Move = new Vector2(_walk, 0);
+        if(_jump != 0)rigidbody2D.velocity = Vector2.up*_jump + Vector2.right*rigidbody2D.velocity.x;
         _jump = 0;
     }
 
@@ -95,14 +96,14 @@ public class PlayerMovement : MonoBehaviour
     {
         var hit = new[]
         {
-            Physics2D.Raycast(transform.position+Vector3.right, -Vector2.up, float.PositiveInfinity,
+            Physics2D.Raycast(transform.position+Vector3.right*0.5f-Vector3.up, -Vector2.up, float.PositiveInfinity,
                 1 << LayerMask.NameToLayer("Terrain")),
-            Physics2D.Raycast(transform.position, -Vector2.up, float.PositiveInfinity,
+            Physics2D.Raycast(transform.position-Vector3.up, -Vector2.up, float.PositiveInfinity,
                 1 << LayerMask.NameToLayer("Terrain")),
-            Physics2D.Raycast(transform.position-Vector3.right, -Vector2.up, float.PositiveInfinity,
+            Physics2D.Raycast(transform.position-Vector3.right*0.4f-Vector3.up, -Vector2.up, float.PositiveInfinity,
                 1 << LayerMask.NameToLayer("Terrain"))
         };
-        return hit.Count(d => d.distance<3) > 2;
+        return hit.Count(d => d.distance<2) > 2;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
