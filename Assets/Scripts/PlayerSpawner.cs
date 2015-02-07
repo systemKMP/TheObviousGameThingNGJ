@@ -33,6 +33,7 @@ public class PlayerSpawner : MonoBehaviour
             controller.Index = i;
             Players[i] = player;
             Screenshaker.Shake(1, Vector2.up);
+            ScoreTracker.Instance.RegisterPlayer(i,player.GetComponent<PlayerCore>());
         }
         
         if (Players.ContainsKey(0) && Players[0] == null) Players.Remove(0);
@@ -49,6 +50,7 @@ public class PlayerSpawner : MonoBehaviour
             keyboardcontroller.JumpInput = KeyCode.W;
             Players[0] = keyboardplayer;
             Screenshaker.Shake(1, Vector2.up);
+            ScoreTracker.Instance.RegisterPlayer(0, keyboardplayer.GetComponent<PlayerCore>());
         }
     }
 
