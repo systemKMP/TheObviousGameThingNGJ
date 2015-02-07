@@ -77,15 +77,17 @@ public class PlayerCore : MonoBehaviour {
         if (gObj.layer == 10) //if collides with player
         {
             var item = gObj.GetComponent<Weapon>();
-            item.GetComponent<Rigidbody2D>().isKinematic = true;
-            item.GetComponent<Collider2D>().enabled = false;
-            item.transform.parent = this.transform;
-            item.transform.localScale = Vector3.one;
-            item.transform.localPosition = Vector3.zero;
+            if (!item.used)
+            {
+                item.GetComponent<Rigidbody2D>().isKinematic = true;
+                item.GetComponent<Collider2D>().enabled = false;
+                item.transform.parent = this.transform;
+                item.transform.localScale = Vector3.one;
+                item.transform.localPosition = Vector3.zero;
 
-            HeldItems.Add(item);
-            item.SetOwner(this);
-
+                HeldItems.Add(item);
+                item.SetOwner(this);
+            }
 
 
         }

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ItemCore : MonoBehaviour
 {
+    [HideInInspector]
+    public bool used = false;
 
     protected PlayerCore weaponOwner;
     public float HoverHeight;

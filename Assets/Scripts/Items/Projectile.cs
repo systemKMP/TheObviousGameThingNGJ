@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
+        
         Destroy(this.gameObject, survivalTime);
     }
 
@@ -36,7 +37,7 @@ public class Projectile : MonoBehaviour
         if (gObj.layer == 8) //if collides with player
         {
             var playerCore = gObj.GetComponent<PlayerCore>();
-            if (damageSelf || playerCore != projectileOwner)
+            if ((damageSelf || playerCore != projectileOwner) && projectileOwner != null)
             {
                 playerCore.Damage(projectileDamage, projectileOwner.Controller.Index);
                 Destroy(this.gameObject);
@@ -47,5 +48,6 @@ public class Projectile : MonoBehaviour
     public void SetOwner(PlayerCore projectileOwner)
     {
         this.projectileOwner = projectileOwner;
+        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), projectileOwner.GetComponent<Collider2D>());
     }
 }

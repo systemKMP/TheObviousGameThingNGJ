@@ -65,7 +65,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101888}
-  m_Mass: 1
+  m_Mass: .00999999978
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc76a7e565741647b0affba97971da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoverHeight: 0
   ammo: 10
   projectile: {fileID: 11482458, guid: ad95cbe73c25ca2469d3e52b7dc37c88, type: 2}
   attackInterval: 2

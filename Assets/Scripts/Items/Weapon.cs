@@ -50,7 +50,13 @@ public class Weapon : ItemCore {
     protected virtual void DestroyWeapon()
     {
         weaponOwner.RemoveItem(this);
-        Destroy(this);
+        Destroy(this.gameObject, 2.0f);
+
+        gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        gameObject.GetComponent<Collider2D>().enabled = true;
+        gameObject.transform.parent = null;
+        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), weaponOwner.GetComponent<Collider2D>());
+        used = true;
     }
 
     protected virtual void FireProjectile(int index)
@@ -74,8 +80,6 @@ public class Weapon : ItemCore {
             var insProj = Instantiate(proj.projectileObject, proj.spawnLocation, Quaternion.identity) as Projectile;
 
                 insProj.SetDirection(proj.velocity);
-
-            Screenshaker.Shake(0.4f, Vector2.right * transform.parent.localScale.x);
 
             insProj.SetOwner(proj.owner);
 

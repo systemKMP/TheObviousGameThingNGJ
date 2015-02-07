@@ -128,7 +128,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   MaxWalkSpeed: 10
   WalkFloatiness: .5
-  JumpForce: 10
+  JumpForce: 20
   MaxJumps: 3
 --- !u!114 &11476092
 MonoBehaviour:
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 1
   HeldItems: []
-  CurrentHealth: 0
+  MaxHealth: 0
   Controller: {fileID: 0}
 --- !u!114 &11485278
 MonoBehaviour:
