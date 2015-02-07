@@ -20,12 +20,20 @@ public class PlayerCore : MonoBehaviour {
 
     public int MaxJumps { get; set; }
 
+    public ControllerController Controller;
 
-    internal void Damage(int projectileDamage)
+    void Start()
+    {
+        Controller = gameObject.GetComponent<ControllerController>();
+    }
+
+
+    public void Damage(int projectileDamage, int killerId)
     {
         currentHealth -= projectileDamage;
         if (currentHealth <= 0)
         {
+            ScoreTracker.Instance.RecordKill(killerId, Controller.Controller);
             KillPlayer();
         }
     }

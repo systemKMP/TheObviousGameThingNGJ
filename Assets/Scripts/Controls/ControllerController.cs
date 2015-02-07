@@ -19,7 +19,7 @@ public class ControllerController : MonoBehaviour
     private float _dead;
     private PlayerCore _core;
     private int _controller;
-
+    
     public void Start()
     {
         _core = gameObject.GetComponent<PlayerCore>();

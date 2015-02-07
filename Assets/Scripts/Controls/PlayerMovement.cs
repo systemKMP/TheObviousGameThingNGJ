@@ -45,11 +45,11 @@ public class PlayerMovement : MonoBehaviour
         if (_direction != direction) { _time = 0; _prewalk = _walk; }
         _direction = direction;
 
-        if (direction > 0)
+        if (direction > 0.02f)
         {
             transform.localScale = Vector3.one;
         }
-        else
+        else if (direction < -0.02f)
         {
             transform.localScale = Vector3.one - Vector3.right * 2.0f;
         }
