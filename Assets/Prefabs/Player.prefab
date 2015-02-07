@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 1
   HeldItems: []
-  MaxHealth: 0
+  MaxHealth: 1000
   Controller: {fileID: 0}
 --- !u!114 &11485278
 MonoBehaviour:

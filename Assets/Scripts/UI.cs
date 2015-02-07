@@ -17,8 +17,6 @@ public class UI : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            if (!players.ContainsKey(i)) continue;
-
             var killText = transform.FindChild("Player " + (i) + " Kills") == null
                 ? null
                 : transform.FindChild("Player " + (i) + " Kills").GetComponent<Text>();
@@ -28,9 +26,41 @@ public class UI : MonoBehaviour
             var hpText = transform.FindChild("Player " + (i) + " Health") == null
                 ? null
                 : transform.FindChild("Player " + (i) + " Health").GetComponent<Text>();
+            var join = transform.FindChild("Player " + (i) + " Join") == null
+                ? null
+                : transform.FindChild("Player " + (i) + " Join").GetComponent<Text>();
 
+            if (players.ContainsKey(i))
+            {
+                if (killText != null)
+                {
+                    killText.text = players[i].kills.ToString();
+                }
+                if (deathText != null)
+                {
+                    deathText.text = players[i].deaths.ToString();
+                }
+                if (hpText != null)
+                {
+                    hpText.text = players[i].core != null ? (players[i].core.CurrentHealth/10).ToString() : "0";
+                }
+            }
             if (killText != null)
-                killText.text = players[i].kills.ToString();
+            {
+                killText.enabled = players.ContainsKey(i);
+            }
+            if (deathText != null)
+            {
+                deathText.enabled = players.ContainsKey(i);
+            }
+            if (hpText != null)
+            {
+                hpText.enabled = players.ContainsKey(i);
+            }
+            if (join != null)
+            {
+                join.enabled = !players.ContainsKey(i) || players[i].core == null;
+            }
         }
     }
 }
