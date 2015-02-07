@@ -11,11 +11,14 @@ public class SpreadShotWeapon : Weapon {
 
     protected override void FireProjectile(int index)
     {
+        List<ProjectileDef> projectilesToSpawn = new List<ProjectileDef>();
+
         for (int i = 0; i < bullets; i++)
         {
-            var insProj = Instantiate(projectile, transform.position + transform.parent.localScale.x * Vector3.right * 2.0f, Quaternion.identity) as Projectile;
+            ProjectileDef pDef = new ProjectileDef() { projectileObject = projectile, spawnLocation = transform.position + transform.parent.localScale.x * Vector3.right * 2.0f };
+
             float angle = (spreadAngle / 2 - spreadAngle / (bullets-1) * i) * Mathf.Deg2Rad;
-            Debug.Log(angle);
+
             Vector2 shotDirection = new Vector2(Mathf.Acos(angle), Mathf.Asin(angle)) * transform.parent.localScale.x;
             if (index > 0)
             {
@@ -26,11 +29,14 @@ public class SpreadShotWeapon : Weapon {
                 shotDirection += Vector2.right + new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
                 
             }
-            insProj.SetDirection(shotDirection);
-            Screenshaker.Shake(0.4f, Vector2.right * transform.parent.localScale.x);
-             
-            insProj.SetOwner(weaponOwner);
+            pDef.velocity = shotDirection;
+
+            pDef.owner = weaponOwner;
+
+            projectilesToSpawn.Add(pDef);
         }
+
+        StartCoroutine(SpawnProjectiles(projectilesToSpawn));
     }
 
 }

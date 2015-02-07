@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Weapon : ItemCore {
 
@@ -53,6 +54,7 @@ public class Weapon : ItemCore {
 
     protected virtual void FireProjectile(int index)
     {
+
         var insProj = Instantiate(projectile, transform.position + transform.parent.localScale.x * Vector3.right * 0.7f, Quaternion.identity) as Projectile;
         if (index > 0){
             insProj.SetDirection(transform.parent.localScale.x * Vector2.right + new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
@@ -63,4 +65,31 @@ public class Weapon : ItemCore {
         
         insProj.SetOwner(weaponOwner);
     }
+
+    protected virtual IEnumerator SpawnProjectiles(List<ProjectileDef> projectilesToSpawn)
+    {
+        foreach (var proj in projectilesToSpawn)
+        {
+            var insProj = Instantiate(proj.projectileObject, proj.spawnLocation, Quaternion.identity) as Projectile;
+
+                insProj.SetDirection(proj.velocity);
+
+            Screenshaker.Shake(0.4f, Vector2.right * transform.parent.localScale.x);
+
+            insProj.SetOwner(proj.owner);
+
+            
+
+            if (Application.isPlaying)
+                yield return new WaitForEndOfFrame();
+        }
+    }
+}
+
+public class ProjectileDef
+{
+    public Projectile projectileObject;
+    public Vector3 spawnLocation;
+    public Vector2 velocity;
+    public PlayerCore owner;
 }
