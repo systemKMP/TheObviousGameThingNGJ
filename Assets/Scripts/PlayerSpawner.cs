@@ -9,6 +9,7 @@ public class PlayerSpawner : MonoBehaviour
     private static readonly Dictionary<int, PlayerMovement> Players = new Dictionary<int, PlayerMovement>();
 
     public PlayerMovement PlayerPrefab;
+    public AudioClip[] SpawnClips;
 
     public void Awake()
     {
@@ -34,6 +35,8 @@ public class PlayerSpawner : MonoBehaviour
             Players[i] = player;
             Screenshaker.Shake(1, Vector2.up);
             ScoreTracker.Instance.RegisterPlayer(i,player.GetComponent<PlayerCore>());
+            GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
+            GetComponent<AudioSource>().Play();
         }
         
         if (Players.ContainsKey(0) && Players[0] == null) Players.Remove(0);
@@ -51,6 +54,8 @@ public class PlayerSpawner : MonoBehaviour
             Players[0] = keyboardplayer;
             Screenshaker.Shake(1, Vector2.up);
             ScoreTracker.Instance.RegisterPlayer(0, keyboardplayer.GetComponent<PlayerCore>());
+            GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
+            GetComponent<AudioSource>().Play();
         }
     }
 

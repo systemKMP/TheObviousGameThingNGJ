@@ -36,7 +36,7 @@ public class Weapon : ItemCore {
         {
             if (Source == null) Source = GetComponent<AudioSource>();
             Source.clip = Clip;
-            Source.volume = 0.4f;
+            Source.volume = 0.6f;
             Source.Play();
 
             FireProjectile(index);

@@ -17,12 +17,13 @@ GameObject:
   - 114: {fileID: 11485278}
   - 60: {fileID: 6020404}
   - 82: {fileID: 8206686}
+  - 82: {fileID: 8281660}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &476090
 Transform:
@@ -136,6 +137,64 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8281660
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9552966
 Animator:
   serializedVersion: 3
@@ -163,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mover: {fileID: 11476092}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8206686}
   WalkCurve:
     serializedVersion: 2
     m_Curve:
@@ -210,6 +269,16 @@ MonoBehaviour:
   AirWalkFloatiness: .100000001
   JumpForce: 20
   MaxJumps: 3
+  StepTime: .200000003
+  StepClips:
+  - {fileID: 8300000, guid: 031aa7076bd86e04db95441cb1f02255, type: 3}
+  - {fileID: 8300000, guid: 6245697ff67db424a92f77a086e31c63, type: 3}
+  - {fileID: 8300000, guid: 7b7dd8c792805884eba0bc880df0ac47, type: 3}
+  - {fileID: 8300000, guid: a9194c83d9211e842894697b39f00732, type: 3}
+  - {fileID: 8300000, guid: ba0a7223ce0e0084a83fcb6186fc7436, type: 3}
+  - {fileID: 8300000, guid: da18d5bb49296c84f97f5e62909c776f, type: 3}
+  - {fileID: 8300000, guid: fce0916c56e00b14bb4a203487482116, type: 3}
+  - {fileID: 8300000, guid: ff7e7bbda99fe554ca72d21a8c0b9616, type: 3}
 --- !u!114 &11476092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,9 +303,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerID: 1
+  Audio: {fileID: 8281660}
   HeldItems: []
   MaxHealth: 1000
   Controller: {fileID: 0}
+  HitClips:
+  - {fileID: 8300000, guid: 83141791106fb444e8352ddc7206ded5, type: 3}
+  - {fileID: 8300000, guid: 0ad357c192bdd534cbf9584a432ab821, type: 3}
+  - {fileID: 8300000, guid: 08c2e82a35d433d4ba6d25c82dc4c85d, type: 3}
 --- !u!114 &11485278
 MonoBehaviour:
   m_ObjectHideFlags: 1

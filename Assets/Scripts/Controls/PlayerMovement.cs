@@ -17,7 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public float AirWalkFloatiness;
     public float JumpForce;
     public int MaxJumps;
+    public float StepTime = 0.2f;
 
+    public AudioClip[] StepClips = new AudioClip[0];
+
+    private float _stepTime;
     private float _direction;
     private float _prewalk;
     private float _walk;
@@ -57,8 +61,20 @@ public class PlayerMovement : MonoBehaviour
             _walk = desiredWalk;
         }
 
-        //if(Audio.isPlaying && _walk == 0)Audio.Play();
-        //if(!Audio.isPlaying && _walk != 0)Audio.Stop();
+        if (_stepTime > 0 && Mathf.Abs(_walk) > 0.01f && IsGrounded())
+        {
+            _stepTime -= Time.deltaTime;
+        }
+        else if (Mathf.Abs(_walk) > 0.01f && IsGrounded())
+        {
+            Audio.clip = StepClips[Random.Range(0, StepClips.Length)];
+            Audio.Play();
+            _stepTime = StepTime;
+        }
+        else
+        {
+            Audio.Stop();
+        }
 
         Mover.Move = new Vector2(_walk, 0);
         if(_jump != 0)rigidbody2D.velocity = Vector2.up*_jump + Vector2.right*rigidbody2D.velocity.x;
