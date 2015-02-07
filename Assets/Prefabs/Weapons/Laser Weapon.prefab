@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42019b250b81b6d4298257685082b912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoverHeight: 2
+  used: 0
+  HoverHeight: 4
   ammo: 20
   projectile: {fileID: 11474882, guid: 48ac0579383a3634e92d8d260ee82bf1, type: 2}
   attackInterval: 1

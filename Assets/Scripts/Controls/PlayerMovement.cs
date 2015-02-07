@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.6f))
+        if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.3f))
         {
             _jumps = MaxJumps;
             _grounds.Add(collision.transform);
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.8f))
+        if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.7f))
         {
             _direction = 0;
         }

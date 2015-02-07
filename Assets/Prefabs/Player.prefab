@@ -139,11 +139,21 @@ MonoBehaviour:
   WalkFloatiness: .5
   AirWalkCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
-  AirMaxWalkSpeed: 0
-  AirWalkFloatiness: 0
+  AirMaxWalkSpeed: 10
+  AirWalkFloatiness: .100000001
   JumpForce: 20
   MaxJumps: 3
 --- !u!114 &11476092
