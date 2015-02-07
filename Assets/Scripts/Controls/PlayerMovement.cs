@@ -17,17 +17,24 @@ public class PlayerMovement : MonoBehaviour
     private float _time;
     private float _jump;
     private int _jumps;
+    private bool _stopped;
 
     public void Update()
     {
         if (Mover == null) { Debug.LogWarning("You haven't attached a movement script to me, moron"); return; }
+
+        if (!_stopped && _direction == 0)
+        {
+            Mover.rigidbody2D.AddForce(new Vector2(-Mover.rigidbody2D.velocity.x, 0) * Mover.rigidbody2D.mass, ForceMode2D.Impulse);
+            _stopped = true;
+        }
 
         float desiredWalk = 0;
         if (_direction != 0)
         {
             desiredWalk = Mathf.Clamp(_direction, -MaxWalkSpeed, MaxWalkSpeed) * MaxWalkSpeed;
         }
-        /*if (_time < WalkFloatiness) TODO I'll fix this part later, rasmus
+        if (_time < WalkFloatiness)
         {
             _walk = Mathf.Lerp(_prewalk, desiredWalk, WalkCurve.Evaluate(_time / WalkFloatiness));
             _time += Time.deltaTime;
@@ -35,8 +42,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _walk = desiredWalk;
-        }*/
-        _walk = desiredWalk;
+        }
 
         Mover.Move = new Vector2(_walk, _jump);
         _jump = 0;
@@ -44,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Walk(float direction)
     {
+        _stopped = false;
         if (_direction != direction) { _time = 0; _prewalk = _walk; }
         _direction = direction;
 
@@ -65,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!CanJump()) return;
         _jumps--;
-        _jump = JumpForce;
+        _jump += JumpForce;
     }
 
     public bool CanJump()
