@@ -7,49 +7,43 @@ public class PlayerCore : MonoBehaviour {
 
     public int PlayerID;
     
-    public List<ItemCore> heldItems;
+    public List<ItemCore> HeldItems;
 
-    public int currentHealth;
+    public int CurrentHealth;
     public int MaxHealth { get; set; }
 
     public int Armor { get; set; }
 
-    public float MovementSpeed { get; set; }
-
-    public float JumpStrength { get; set; }
-
-    public int MaxJumps { get; set; }
-
-    public ControllerController Controller;
+    public PlayerController Controller;
 
     void Start()
     {
-        Controller = gameObject.GetComponent<ControllerController>();
+        Controller = gameObject.GetComponent<PlayerController>();
     }
 
 
     public void Damage(int projectileDamage, int killerId)
     {
-        currentHealth -= projectileDamage;
-        if (currentHealth <= 0)
+        CurrentHealth -= projectileDamage;
+        if (CurrentHealth <= 0)
         {
-            ScoreTracker.Instance.RecordKill(killerId, Controller.Controller);
+            ScoreTracker.Instance.RecordKill(killerId, Controller.Index);
             KillPlayer();
         }
     }
 
     private void KillPlayer()
     {
-        for (int i = 0; i < heldItems.Count; i++)
+        for (int i = 0; i < HeldItems.Count; i++)
         {
             if (Random.Range(0, 2) == 0)
             {
-                heldItems[i].GetComponent<Rigidbody2D>().isKinematic = false;
-                heldItems[i].GetComponent<Collider2D>().enabled = true;
-                heldItems[i].transform.parent = null;
-                heldItems[i].SetOwner(null);
+                HeldItems[i].GetComponent<Rigidbody2D>().isKinematic = false;
+                HeldItems[i].GetComponent<Collider2D>().enabled = true;
+                HeldItems[i].transform.parent = null;
+                HeldItems[i].SetOwner(null);
 
-                heldItems.RemoveAt(i);
+                HeldItems.RemoveAt(i);
                 i--;
 
             }
@@ -76,7 +70,7 @@ public class PlayerCore : MonoBehaviour {
             item.transform.localScale = Vector3.one;
             item.transform.localPosition = Vector3.zero;
 
-            heldItems.Add(item);
+            HeldItems.Add(item);
             item.SetOwner(this);
 
 
@@ -86,14 +80,14 @@ public class PlayerCore : MonoBehaviour {
 
     public void RemoveItem(ItemCore item)
     {
-        heldItems.Remove(item);
+        HeldItems.Remove(item);
     }
 
     public void UseItems()
     {
-        for (int i = 0; i < heldItems.Count; i++)
+        for (int i = 0; i < HeldItems.Count; i++)
         {
-            heldItems[i].Use(i);
+            HeldItems[i].Use(i);
         }
     }
 }

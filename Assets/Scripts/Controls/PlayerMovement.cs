@@ -9,12 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public float MaxWalkSpeed;
     public float WalkFloatiness;
     public float JumpForce;
+    public int MaxJumps;
 
     private float _direction;
     private float _prewalk;
     private float _walk;
     private float _time;
     private float _jump;
+    private int _jumps;
 
     public void Update()
     {
@@ -47,16 +49,32 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction > 0.02f)
         {
-            transform.localScale = Vector3.one;
+            var scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
         else if (direction < -0.02f)
         {
-            transform.localScale = Vector3.one - Vector3.right * 2.0f;
+            var scale = transform.localScale;
+            scale.x = -Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
 
     public void Jump()
     {
+        if (!CanJump()) return;
+        _jumps--;
         _jump = JumpForce;
+    }
+
+    public bool CanJump()
+    {
+        return _jumps > 0;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        _jumps = MaxJumps;
     }
 }

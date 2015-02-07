@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
             var playerCore = gObj.GetComponent<PlayerCore>();
             if (damageSelf || playerCore != projectileOwner)
             {
-                playerCore.Damage(projectileDamage, projectileOwner.Controller.Controller);
+                playerCore.Damage(projectileDamage, projectileOwner.Controller.Index);
                 Destroy(this.gameObject);
             }
         }

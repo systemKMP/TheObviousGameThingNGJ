@@ -27,10 +27,10 @@ public class PlayerSpawner : MonoBehaviour
 
             var player = (PlayerMovement)Instantiate(PlayerPrefab, SpawnPoints[Random.Range(0, SpawnPoints.Count)].transform.position,
                 Quaternion.identity);
-            var controller = player.GetComponent<ControllerController>() ??
-                             player.gameObject.AddComponent<ControllerController>();
+            var controller = player.GetComponent<JoystickController>() ??
+                             player.gameObject.AddComponent<JoystickController>();
             controller.Player = player;
-            controller.Controller = i;
+            controller.Index = i;
             Players[i] = player;
         }
         

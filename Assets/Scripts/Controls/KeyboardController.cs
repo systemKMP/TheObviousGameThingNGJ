@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KeyboardController : MonoBehaviour
+public class KeyboardController : PlayerController
 {
-    public PlayerMovement Player;
     public string WalkInputAxis;
     public KeyCode JumpInput;
 

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 176090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0952619389, y: .199160099, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,7 +46,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
 --- !u!61 &6176090
@@ -92,6 +92,8 @@ MonoBehaviour:
   MaxWalkSpeed: 4
   WalkFloatiness: 0
   JumpForce: 5
+  MaxJumps: 3
+  _jumps: 0
 --- !u!114 &11476092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,8 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerID: 1
-  heldItems: []
-  currentHealth: 5
+  HeldItems: []
+  CurrentHealth: 0
+  Controller: {fileID: 0}
 --- !u!212 &21283480
 SpriteRenderer:
   m_ObjectHideFlags: 1
