@@ -29,6 +29,9 @@ public class UI : MonoBehaviour
             var join = transform.FindChild("Player " + (i) + " Join") == null
                 ? null
                 : transform.FindChild("Player " + (i) + " Join").GetComponent<Text>();
+            var logo = transform.FindChild("Player " + (i) + " Logo") == null
+                ? null
+                : transform.FindChild("Player " + (i) + " Logo").GetComponent<Image>();
 
             if (players.ContainsKey(i))
             {
@@ -56,6 +59,10 @@ public class UI : MonoBehaviour
             if (hpText != null)
             {
                 hpText.enabled = players.ContainsKey(i);
+            }
+            if (logo != null)
+            {
+                logo.enabled = players.ContainsKey(i);
             }
             if (join != null)
             {
