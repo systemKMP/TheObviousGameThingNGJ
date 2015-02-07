@@ -73,7 +73,7 @@ MonoBehaviour:
   survivalTime: .800000012
   projectileDamage: 60
   damageSelf: 0
-  trail: {fileID: 0}
+  trail: {fileID: 19891630, guid: 7efc352218332db42a1b4c9d9e0d81ca, type: 2}
   destroyEffect: {fileID: 0}
   shrapnelProjectile: {fileID: 11434618, guid: cc911f18df539fa44869a350b8a23cb7, type: 2}
   bullets: 5

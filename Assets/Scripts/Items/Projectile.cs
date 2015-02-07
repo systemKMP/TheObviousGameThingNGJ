@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
     public GameObject HitPrefab;
     public float projectileSpeed;
     public float survivalTime = 1.0f;
+    private float destructionTimer;
+    private bool destroying = false;
 
     public int projectileDamage = 1;
 
@@ -13,15 +15,44 @@ public class Projectile : MonoBehaviour
 
     protected PlayerCore projectileOwner;
 
-    public GameObject trail;
+    public ParticleSystem trail;
     public GameObject destroyEffect;
 
 
 
     protected virtual void Start()
     {
-        
-        Destroy(this.gameObject, survivalTime);
+
+        StartDestruction();
+        if (trail != null)
+        {
+            trail = Instantiate(trail, transform.position, Quaternion.identity) as ParticleSystem;
+            trail.gameObject.transform.parent = transform;
+        }
+    }
+
+    protected virtual void Update()
+    {
+        if (destroying)
+        {
+            destructionTimer -= Time.deltaTime;
+            if (destructionTimer < 0)
+            {
+                ProperDestroy();
+            }
+        }
+    }
+
+    public void ProperDestroy(){
+        FreeTrail();
+        Destroy(gameObject);
+    }
+
+    public void StartDestruction()
+    {
+        destroying = true;
+        destructionTimer = survivalTime;
+
     }
 
     public virtual void SetDirection(Vector2 direction, float angularVelocity = 0.0f)
@@ -37,7 +68,6 @@ public class Projectile : MonoBehaviour
         }
     }
 
-
     protected virtual void OnCollisionEnter2D(Collision2D col)
     {
 
@@ -48,7 +78,7 @@ public class Projectile : MonoBehaviour
             if ((damageSelf || playerCore != projectileOwner) && projectileOwner != null)
             {
                 playerCore.Damage(projectileDamage, projectileOwner.Controller.Index);
-                Destroy(this.gameObject);
+                ProperDestroy();
             }
         }
     }
@@ -66,9 +96,17 @@ public class Projectile : MonoBehaviour
         {
             Instantiate(HitPrefab, transform.position, Quaternion.identity);
         }
+    }
+
+    public void FreeTrail()
+    {
+        Debug.Log(trail);
         if (trail != null)
         {
+            Debug.Log("freeing");
             trail.transform.parent = null;
+            //trail.emissionRate = 0.0f;
+            Destroy(trail.gameObject, 1.0f);
         }
     }
 }
