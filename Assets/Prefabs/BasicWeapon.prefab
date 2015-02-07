@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5869846}
   - 50: {fileID: 5069846}
   - 114: {fileID: 11469846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BasicWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -40,6 +40,26 @@ public class PlayerCore : MonoBehaviour {
 
     private void KillPlayer()
     {
+        for (int i = 0; i < heldItems.Count; i++)
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                heldItems[i].GetComponent<Rigidbody2D>().isKinematic = false;
+                heldItems[i].GetComponent<Collider2D>().enabled = true;
+                heldItems[i].transform.parent = null;
+                heldItems[i].SetOwner(null);
+
+                heldItems.RemoveAt(i);
+                i--;
+
+            }
+
+
+        
+        }
+
+
+
         Destroy(this.gameObject);
     }
 
@@ -64,7 +84,7 @@ public class PlayerCore : MonoBehaviour {
         }
     }
 
-    public void RemoveWeapon(ItemCore item)
+    public void RemoveItem(ItemCore item)
     {
         heldItems.Remove(item);
     }
