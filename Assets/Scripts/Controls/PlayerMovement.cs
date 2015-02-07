@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using System.Collections;
 
@@ -9,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public AnimationCurve WalkCurve;
     public float MaxWalkSpeed;
     public float WalkFloatiness;
+    public AnimationCurve AirWalkCurve;
+    public float AirMaxWalkSpeed;
+    public float AirWalkFloatiness;
     public float JumpForce;
     public int MaxJumps;
 
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float _jump;
     private int _jumps;
     private bool _stopped;
+    private readonly List<Transform> _grounds = new List<Transform>(); 
 
     public void Update()
     {
@@ -30,14 +35,18 @@ public class PlayerMovement : MonoBehaviour
             _stopped = true;
         }
 
+        var curve = (IsGrounded() ? WalkCurve : AirWalkCurve);
+        var floatiness = (IsGrounded() ? WalkFloatiness : AirWalkFloatiness);
+        var maxspeed = (IsGrounded() ? MaxWalkSpeed : AirMaxWalkSpeed);
+
         float desiredWalk = 0;
         if (_direction != 0)
         {
-            desiredWalk = Mathf.Clamp(_direction, -MaxWalkSpeed, MaxWalkSpeed) * MaxWalkSpeed;
+            desiredWalk = Mathf.Clamp(_direction, -maxspeed, maxspeed) * maxspeed;
         }
-        if (_time < WalkFloatiness)
+        if (_time < floatiness)
         {
-            _walk = Mathf.Lerp(_prewalk, desiredWalk, WalkCurve.Evaluate(_time / WalkFloatiness));
+            _walk = Mathf.Lerp(_prewalk, desiredWalk, curve.Evaluate(_time / floatiness));
             _time += Time.deltaTime;
         }
         else
@@ -81,17 +90,28 @@ public class PlayerMovement : MonoBehaviour
         return _jumps > 0;
     }
 
+    public bool IsGrounded()
+    {
+        return _grounds.Count > 0;
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.6f))
         {
             _jumps = MaxJumps;
+            _grounds.Add(collision.transform);
         }
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (_grounds.Contains(collision.transform)) _grounds.Remove(collision.transform);
     }
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.9f))
+        if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.8f))
         {
             _direction = 0;
         }
