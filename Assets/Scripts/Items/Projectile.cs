@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Start()
     {
-
+        survivalTime += Random.Range(0.0f, 1.0f);
         StartDestruction();
         if (trail != null)
         {
@@ -44,6 +44,14 @@ public class Projectile : MonoBehaviour
     }
 
     public void ProperDestroy(){
+        if (HitPrefab != null)
+        {
+            Instantiate(HitPrefab, transform.position, Quaternion.identity);
+        }
+        if (destroyEffect != null)
+        {
+            Destroy(Instantiate(destroyEffect, transform.position, Quaternion.identity), 1.0f);
+        }
         FreeTrail();
         Destroy(gameObject);
     }
@@ -89,23 +97,12 @@ public class Projectile : MonoBehaviour
         Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), projectileOwner.GetComponent<Collider2D>());
     }
 
-
-    public virtual void OnDestroy()
-    {
-        if (HitPrefab != null)
-        {
-            Instantiate(HitPrefab, transform.position, Quaternion.identity);
-        }
-    }
-
     public void FreeTrail()
     {
-        Debug.Log(trail);
         if (trail != null)
         {
-            Debug.Log("freeing");
             trail.transform.parent = null;
-            //trail.emissionRate = 0.0f;
+            trail.emissionRate = 0.0f;
             Destroy(trail.gameObject, 1.0f);
         }
     }

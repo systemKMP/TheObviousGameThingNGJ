@@ -26,9 +26,8 @@ public class ShrapnelProjectile : Projectile {
         intialVelocity = rigidbody2D.velocity;
     }
 
-    public override void OnDestroy()
+    void OnDestroy()
     {
-        base.OnDestroy();
 
         if ((splitOnPlayerCollision && collidedWithPlayer) || !collidedWithPlayer)
         {
