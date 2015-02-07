@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 0690850653dfe5443bccd4345754eb79
+guid: 2492b501fc0b64d4d8e828e6839dbf13
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tex_slow_gun_0
+    21300000: tex_lasergrenade_projectile_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,13 +44,13 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: tex_slow_gun_0
+    - name: tex_lasergrenade_projectile_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 15
-        height: 14
+        x: 6
+        y: 4
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
