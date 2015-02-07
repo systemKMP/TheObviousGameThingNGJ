@@ -37,6 +37,7 @@ public class PlayerCore : MonoBehaviour {
 
     public void Damage(int projectileDamage, int killerId)
     {
+        UI.Instance.Hit[Controller.Index] = 0.5f;
         CurrentHealth -= projectileDamage;
         if (CurrentHealth <= 0)
         {

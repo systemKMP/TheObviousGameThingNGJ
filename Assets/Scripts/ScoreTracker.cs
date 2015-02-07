@@ -49,7 +49,7 @@ public class ScoreTracker {
             {
                 player.kills++;
             }
-            if (player.playerId == killerId)
+            if (player.playerId == casualtyId)
             {
                 player.deaths++;
             }
