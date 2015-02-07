@@ -11331,7 +11331,7 @@ Prefab:
     - target: {fileID: 11429704, guid: 5c53b89bd5cd5524b9deb091bf7295ca, type: 2}
       propertyPath: Weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4,
+      objectReference: {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c53b89bd5cd5524b9deb091bf7295ca, type: 2}
@@ -12503,7 +12503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
   - 2
   SpawnMin: 2
@@ -13481,7 +13481,7 @@ Prefab:
     - target: {fileID: 11429704, guid: 5c53b89bd5cd5524b9deb091bf7295ca, type: 2}
       propertyPath: Weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4,
+      objectReference: {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c53b89bd5cd5524b9deb091bf7295ca, type: 2}
@@ -16419,7 +16419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
   - 2
   SpawnMin: 2

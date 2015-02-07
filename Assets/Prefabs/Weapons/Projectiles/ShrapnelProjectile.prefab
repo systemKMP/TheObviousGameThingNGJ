@@ -28,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.4650497, y: 55.5044746, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: 78.1095276, y: 29.8916492, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +57,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .0799999982, y: .0500000007}
+  m_Size: {x: 1.29999995, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11481908
 MonoBehaviour:
@@ -73,13 +73,14 @@ MonoBehaviour:
   HitPrefab: {fileID: 0}
   projectileSpeed: 20
   survivalTime: .800000012
-  projectileDamage: 30
+  projectileDamage: 60
   damageSelf: 0
-  shrapnelProjectile: {fileID: 11482458, guid: ad95cbe73c25ca2469d3e52b7dc37c88, type: 2}
-  bullets: 3
-  spreadAngle: 60
+  shrapnelProjectile: {fileID: 11434618, guid: cc911f18df539fa44869a350b8a23cb7, type: 2}
+  bullets: 5
+  spreadAngle: 80
   splitOnPlayerCollision: 0
-  MaxRandomOffset: 15
+  MaxRandomOffset: 12
+  angularStrengthMax: 800
 --- !u!198 &19834384
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1174,7 +1175,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 93872225c4ab6044694f65c002400c8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02fb2082b50737d49a64dbce7d274a5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -19,7 +19,6 @@ public class Explosive : Projectile {
 
     protected override void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("hit");
         var gObj = col.gameObject;
         if (gObj.layer == 8)
         {

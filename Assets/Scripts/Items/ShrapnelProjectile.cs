@@ -17,6 +17,9 @@ public class ShrapnelProjectile : Projectile {
     [Range(0.0f, 20.0f)]
     public float MaxRandomOffset;
 
+    public float angularStrengthMax;
+    
+
     protected override void Start()
     {
         base.Start();
@@ -54,9 +57,12 @@ public class ShrapnelProjectile : Projectile {
             {
                 var insProj = Instantiate(proj.projectileObject, proj.spawnLocation, Quaternion.identity) as Projectile;
 
-                insProj.SetDirection(proj.velocity);
+                var angVelocity = Random.Range(-angularStrengthMax, angularStrengthMax);
+                insProj.SetDirection(proj.velocity, angVelocity);
 
                 insProj.SetOwner(proj.owner);
+
+                
             }
         }
         

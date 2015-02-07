@@ -14,7 +14,7 @@ public class LaserProjectile : Projectile
     private Vector2 _direction;
     private bool _hit;
 
-    public override void SetDirection(Vector2 direction)
+    public override void SetDirection(Vector2 direction, float angluarVelocity = 0.0f)
     {
         _direction = direction;
         _line = GetComponent<LineRenderer>();

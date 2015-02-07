@@ -19,9 +19,11 @@ public class Projectile : MonoBehaviour
         Destroy(this.gameObject, survivalTime);
     }
 
-    public virtual void SetDirection(Vector2 direction)
+    public virtual void SetDirection(Vector2 direction, float angularVelocity = 0.0f)
     {
         rigidbody2D.velocity = projectileSpeed * direction.normalized;
+        rigidbody2D.angularVelocity = angularVelocity;
+
         if (direction.x < 0)
         {
             Vector3 scale = transform.localScale;
@@ -29,6 +31,7 @@ public class Projectile : MonoBehaviour
             transform.localScale = scale;
         }
     }
+
 
     protected virtual void OnCollisionEnter2D(Collision2D col)
     {

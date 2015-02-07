@@ -45,7 +45,7 @@ public class ScoreTracker {
     {
         foreach (var player in playerScores)
         {
-            if (player.playerId == killerId)
+            if (player.playerId == killerId && casualtyId != killerId)
             {
                 player.kills++;
             }
