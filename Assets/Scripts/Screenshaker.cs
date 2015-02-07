@@ -38,7 +38,7 @@ public class Screenshaker : MonoBehaviour
 
     private void ShakeIt(float amount, Vector2 direction)
     {
-        _amount += amount;
+        _amount = Mathf.Max(_amount,amount);
         _direction = direction == Vector2.zero 
             ? direction 
             : Vector2.Lerp(_direction, direction.normalized, 0.5f).normalized;

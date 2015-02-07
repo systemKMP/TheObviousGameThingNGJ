@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
 
     public virtual void SetDirection(Vector2 direction)
     {
-        rigidbody2D.velocity = projectileSpeed * direction;
+        rigidbody2D.velocity = projectileSpeed * direction.normalized;
     }
 
     void OnCollisionEnter2D(Collision2D col)

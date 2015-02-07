@@ -32,6 +32,7 @@ public class PlayerSpawner : MonoBehaviour
             controller.Player = player;
             controller.Index = i;
             Players[i] = player;
+            Screenshaker.Shake(1, Vector2.up);
         }
         
         if (Players.ContainsKey(0) && Players[0] == null) Players.Remove(0);
@@ -47,6 +48,7 @@ public class PlayerSpawner : MonoBehaviour
             keyboardcontroller.WalkInputAxis = "Horizontal";
             keyboardcontroller.JumpInput = KeyCode.W;
             Players[0] = keyboardplayer;
+            Screenshaker.Shake(1, Vector2.up);
         }
     }
 

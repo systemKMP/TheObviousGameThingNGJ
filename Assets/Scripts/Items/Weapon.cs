@@ -59,6 +59,7 @@ public class Weapon : ItemCore {
         } else {
             insProj.SetDirection(transform.parent.localScale.x * Vector2.right);
         }
+        Screenshaker.Shake(0.4f, Vector2.right * transform.parent.localScale.x);
         
         insProj.SetOwner(weaponOwner);
     }
