@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
-
+    public GameObject HitPrefab;
     public float projectileSpeed;
     public float survivalTime = 1.0f;
 
@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
 
     public bool damageSelf = false;
 
-    private PlayerCore projectileOwner;
+    protected PlayerCore projectileOwner;
 
     void Start()
     {
