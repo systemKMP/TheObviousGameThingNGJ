@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public float ShakeAmount = 50;
 
     public Dictionary<int, float> Hit = new Dictionary<int, float>();
+    public Dictionary<int, float> CountDown = new Dictionary<int, float>(); 
 
     public static UI Instance;
 
@@ -44,6 +45,9 @@ public class UI : MonoBehaviour
             var hpText = FindChild("Player " + (i) + " Health", transform) == null
                 ? null
                 : FindChild("Player " + (i) + " Health", transform).GetComponent<Text>();
+            var overText = FindChild("Player " + (i) + " Health", transform) == null
+                ? null
+                : FindChild("Player " + (i) + " Over", transform).GetComponent<Text>();
             var join = FindChild("Player " + (i) + " Join", transform) == null
                 ? null
                 : FindChild("Player " + (i) + " Join", transform).GetComponent<Text>();
@@ -71,6 +75,12 @@ public class UI : MonoBehaviour
                 {
                     hpText.text = players[i].core != null ? (players[i].core.CurrentHealth / 10).ToString() : "0";
                 }
+                if (overText != null)
+                {
+                    overText.rectTransform.localScale = (players.ContainsKey(i) && players[i].core == null)
+                        ? Vector2.one * (0.9f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.1f))
+                        : Vector2.zero;
+                }
             }
             if (logo != null)
             {
@@ -81,7 +91,7 @@ public class UI : MonoBehaviour
                     if (Hit.ContainsKey(i) && Hit[i] > 0)
                     {
                         container.localPosition = Vector2.right * Hit[i] * Mathf.Cos(Time.time * 100) * ShakeAmount;
-                        logo.color = Color.Lerp(originalColors[i], Color.black, Hit[i]/0.5f);
+                        logo.color = Color.Lerp(originalColors[i], new Color(-1, -1, -1, 1), Hit[i] / 0.5f);
                         Hit[i] -= Time.deltaTime;
                     }
                     else
@@ -94,7 +104,7 @@ public class UI : MonoBehaviour
             }
             if (join != null)
             {
-                join.rectTransform.localScale = (!players.ContainsKey(i) || players[i].core == null)
+                join.rectTransform.localScale = (!players.ContainsKey(i))
                     ? Vector2.one * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.2f))
                     : Vector2.zero;
             }
@@ -104,8 +114,8 @@ public class UI : MonoBehaviour
                 {
                     hint.rectTransform.localScale = Vector2.one*(0.8f + Mathf.Abs(Mathf.Cos(Time.time*2)*0.2f));
                 }
-                title.rectTransform.localScale = Vector3.Lerp(title.rectTransform.localScale, 
-                    ShowTitle() ? Vector3.one : Vector3.zero, 0.02f); // TODO pretty transition
+                title.rectTransform.localScale = Vector3.Lerp(title.rectTransform.localScale,
+                    ShowTitle() ? Vector3.one * (0.9f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.1f)) : Vector3.zero, 0.02f); // TODO pretty transition
             }
         }
     }
