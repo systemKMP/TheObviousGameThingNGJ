@@ -44,6 +44,8 @@ public class PlayerSpawner : MonoBehaviour
             var keyboardcontroller = keyboardplayer.GetComponent<KeyboardController>() ??
                                      keyboardplayer.gameObject.AddComponent<KeyboardController>();
             keyboardcontroller.Player = keyboardplayer;
+            keyboardcontroller.WalkInputAxis = "Horizontal";
+            keyboardcontroller.JumpInput = KeyCode.W;
             Players[0] = keyboardplayer;
         }
     }
