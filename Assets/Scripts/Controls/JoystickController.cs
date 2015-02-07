@@ -24,9 +24,9 @@ public class JoystickController : PlayerController
             var x = Input.GetAxis("Joystick_" + Index + "_Left_x");
             var y = Input.GetAxis("Joystick_" + Index + "_Left_y");
             var d = Mathf.Sqrt(x * x + y * y);
-            if (d < 0.5f && d != 0)
+            if (d < 0.4f && d != 0)
             {
-                _dead = d * 3f;
+                _dead = d * 2f;
                 _calibrated = true;
             }
         }
