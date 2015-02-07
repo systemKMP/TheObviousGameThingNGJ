@@ -32,9 +32,9 @@ public class ControllerController : MonoBehaviour
             var x = Input.GetAxis("Joystick_" + Controller + "_Left_x");
             var y = Input.GetAxis("Joystick_" + Controller + "_Left_y");
             var d = Mathf.Sqrt(x * x + y * y);
-            if (d < 0.5f)
+            if (d < 0.5f && d != 0)
             {
-                _dead = d * 1.5f;
+                _dead = d * 3f;
                 _calibrated = true;
             }
         }
