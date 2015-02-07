@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.6000004, y: 13.96, z: 0}
+  m_LocalPosition: {x: 11.5500002, y: 13.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,8 +41,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
+  - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
   Rates:
   - 1
+  - 5
   SpawnMin: 2
   SpawnMax: 4
 --- !u!1001 &100100000
