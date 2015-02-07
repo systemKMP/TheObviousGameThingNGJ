@@ -19,16 +19,13 @@ public class SpreadShotWeapon : Weapon {
 
             float angle = (spreadAngle / 2 - spreadAngle / (bullets-1) * i) * Mathf.Deg2Rad;
 
-            Vector2 shotDirection = new Vector2(Mathf.Acos(angle), Mathf.Asin(angle)) * transform.parent.localScale.x;
+            Vector2 shotDirection = new Vector2(Mathf.Acos(angle), Mathf.Asin(angle));
+            shotDirection.x *= transform.parent.localScale.x;
             if (index > 0)
             {
                 shotDirection += new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
             }
-            else
-            {
-                shotDirection += Vector2.right + new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
-                
-            }
+
             pDef.velocity = shotDirection;
 
             pDef.owner = weaponOwner;

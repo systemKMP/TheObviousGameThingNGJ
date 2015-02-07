@@ -41,10 +41,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
   - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
   Rates:
-  - 1
-  - 5
+  - 2
+  - 2
+  - 2
+  - 2
   SpawnMin: 2
   SpawnMax: 4
 --- !u!1001 &100100000

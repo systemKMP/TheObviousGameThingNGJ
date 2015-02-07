@@ -1,43 +1,43 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &169846
+--- !u!1 &191108
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 469846}
-  - 33: {fileID: 3369846}
-  - 23: {fileID: 2369846}
-  - 58: {fileID: 5869846}
-  - 50: {fileID: 5069846}
-  - 114: {fileID: 11469846}
+  - 4: {fileID: 491108}
+  - 33: {fileID: 3391108}
+  - 23: {fileID: 2391108}
+  - 58: {fileID: 5891108}
+  - 50: {fileID: 5091108}
+  - 114: {fileID: 11491108}
   m_Layer: 10
-  m_Name: Laser Weapon
+  m_Name: BasicShrapnelWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &469846
+--- !u!4 &491108
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169846}
+  m_GameObject: {fileID: 191108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.6068401, y: 7.83553028, z: 0}
+  m_LocalPosition: {x: 90.8294678, y: 53.1347046, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2369846
+--- !u!23 &2391108
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169846}
+  m_GameObject: {fileID: 191108}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -52,20 +52,20 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3369846
+--- !u!33 &3391108
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169846}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!50 &5069846
+  m_GameObject: {fileID: 191108}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &5091108
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169846}
-  m_Mass: 1
+  m_GameObject: {fileID: 191108}
+  m_Mass: .00999999978
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -74,23 +74,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5869846
+--- !u!58 &5891108
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169846}
+  m_GameObject: {fileID: 191108}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Radius: .50000006
   m_Center: {x: 5.96046448e-08, y: 0}
---- !u!114 &11469846
+--- !u!114 &11491108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169846}
+  m_GameObject: {fileID: 191108}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42019b250b81b6d4298257685082b912, type: 3}
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used: 0
   HoverHeight: 4
-  ammo: 3
-  projectile: {fileID: 11474882, guid: 48ac0579383a3634e92d8d260ee82bf1, type: 2}
-  attackInterval: 1.29999995
+  ammo: 8
+  projectile: {fileID: 11481908, guid: d65a4ebab47d9fe4ab60429a1ef08b70, type: 2}
+  attackInterval: .699999988
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -110,6 +110,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 169846}
+  m_RootGameObject: {fileID: 191108}
   m_IsPrefabParent: 1
   m_IsExploded: 1

@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
 
     protected PlayerCore projectileOwner;
 
-    void Start()
+    protected virtual void Start()
     {
         
         Destroy(this.gameObject, survivalTime);
@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    protected virtual void OnCollisionEnter2D(Collision2D col)
     {
 
         var gObj = col.gameObject;

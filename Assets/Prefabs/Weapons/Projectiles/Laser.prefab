@@ -66,43 +66,78 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: -.0132515598
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: .312218189
-      value: .194680437
+    - time: .148264363
+      value: .13009645
       inSlope: .0100163743
       outSlope: .0100163743
       tangentMode: 0
-    - time: .493651569
-      value: .146932393
+    - time: .250515491
+      value: .0459360816
       inSlope: -.52601099
       outSlope: -.52601099
       tangentMode: 0
-    - time: .711680114
-      value: .253058314
+    - time: .366115868
+      value: .123801999
+      inSlope: -.31247735
+      outSlope: -.31247735
+      tangentMode: 0
+    - time: .46753791
+      value: .0402126014
+      inSlope: -.467523932
+      outSlope: -.467523932
+      tangentMode: 0
+    - time: .566386104
+      value: .122884616
+      inSlope: -.00241212547
+      outSlope: -.00241212547
+      tangentMode: 0
+    - time: .66443783
+      value: .0437453762
+      inSlope: -.341460109
+      outSlope: -.341460109
+      tangentMode: 0
+    - time: .764027953
+      value: .110361256
+      inSlope: -.237397254
+      outSlope: -.237397254
+      tangentMode: 0
+    - time: .832782388
+      value: .0320226029
       inSlope: 1.04025006
       outSlope: 1.04025006
       tangentMode: 0
-    - time: .852843702
-      value: .499561906
-      inSlope: 1.59911811
-      outSlope: 1.59911811
+    - time: .856570005
+      value: .115544982
+      inSlope: 1.36334825
+      outSlope: 1.36334825
       tangentMode: 0
-    - time: .892598689
-      value: 1.00778162
-      inSlope: -1.49920583
-      outSlope: -1.49920583
+    - time: .887940884
+      value: .876683116
+      inSlope: 7.37596416
+      outSlope: 7.37596416
+      tangentMode: 0
+    - time: .941224873
+      value: 1.01871753
+      inSlope: -4.11731617e-06
+      outSlope: -4.11731617e-06
+      tangentMode: 0
+    - time: .995632887
+      value: .881727993
+      inSlope: -8.0282383
+      outSlope: -8.0282383
       tangentMode: 0
     - time: .995833337
-      value: .0170304775
+      value: .00377891771
       inSlope: 2
       outSlope: 2
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  HitTime: .899999976
+  HitTime: .850000024
 --- !u!120 &12090276
 LineRenderer:
   m_ObjectHideFlags: 1
