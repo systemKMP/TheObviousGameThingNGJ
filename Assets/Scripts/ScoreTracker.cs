@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,6 +7,8 @@ public class ScoreTracker {
 
     private static ScoreTracker _instance;
     private List<PlayerScore> playerScores;
+
+    public List<PlayerScore> Scores { get { return _instance.playerScores; } } 
     
     public static ScoreTracker Instance
     {
@@ -24,6 +27,21 @@ public class ScoreTracker {
         playerScores = new List<PlayerScore>();
     }
 
+    public void RegisterPlayer(int id, PlayerCore core)
+    {
+        var scoreBoard = playerScores.SingleOrDefault(score => score.playerId == id);
+        if (scoreBoard == null)
+        {
+            scoreBoard = new PlayerScore() {playerId = id, core = core};
+            playerScores.Add(scoreBoard);
+            Debug.Log("Player "+id+" Joined");
+        }
+        else
+        {
+            scoreBoard.core = core;
+        }
+    }
+
     public void RecordKill(int killerId, int casualtyId)
     {
         foreach (var player in playerScores)
@@ -32,20 +50,20 @@ public class ScoreTracker {
             {
                 player.kills++;
             }
-            else if (player.playerId == killerId)
+            if (player.playerId == killerId)
             {
                 player.deaths++;
             }
-
         }
 
-        Debug.Log(killerId + " kills " + casualtyId);
+        Debug.Log(killerId + " killed " + casualtyId);
     }
     
 }
 
 public class PlayerScore {
     public int playerId;
+    public PlayerCore core;
     public int deaths;
     public int kills;
 }
