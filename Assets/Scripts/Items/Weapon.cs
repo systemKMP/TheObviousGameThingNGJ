@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class Weapon : ItemCore {
 
     public int ammo = 10; // -1 for infinity, 0 for item loss
@@ -9,11 +10,12 @@ public class Weapon : ItemCore {
     public Projectile projectile; //Item to instantiate on attack;
 
     public float attackInterval;
-
+    public AudioClip Clip;
 
 
     protected bool readyForAttack = true;
     protected float attackTimer;
+    protected AudioSource Source;
 
     public override void Update() 
     {
@@ -32,6 +34,11 @@ public class Weapon : ItemCore {
     {
         if (readyForAttack)
         {
+            if (Source == null) Source = GetComponent<AudioSource>();
+            Source.clip = Clip;
+            Source.volume = 0.6f;
+            Source.Play();
+
             FireProjectile(index);
             readyForAttack = false;
             attackTimer = attackInterval;

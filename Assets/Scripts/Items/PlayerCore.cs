@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class PlayerCore : MonoBehaviour {
 
     public int PlayerID;
+
+    public AudioSource Audio;
     
     public List<ItemCore> HeldItems;
 
@@ -15,6 +17,8 @@ public class PlayerCore : MonoBehaviour {
     public int Armor { get; set; }
 
     public PlayerController Controller;
+
+    public AudioClip[] HitClips = new AudioClip[0];
 
     private Color _originalColor;
     private SpriteRenderer _sprite;
@@ -56,6 +60,9 @@ public class PlayerCore : MonoBehaviour {
     public void Damage(int projectileDamage, int killerId)
     {
         UI.Instance.Hit[Controller.Index] = _hit = 0.5f;
+        Audio.clip = HitClips[Random.Range(0, HitClips.Length)];
+        Audio.Play();
+
         CurrentHealth -= projectileDamage;
         if (CurrentHealth <= 0)
         {
