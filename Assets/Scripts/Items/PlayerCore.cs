@@ -32,13 +32,12 @@ public class PlayerCore : MonoBehaviour {
 
     private void KillPlayer()
     {
-
+        Destroy(this.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         var gObj = col.transform.gameObject;
-        Debug.Log(gObj.layer);
         
         if (gObj.layer == 10) //if collides with player
         {
@@ -64,9 +63,9 @@ public class PlayerCore : MonoBehaviour {
 
     public void UseItems()
     {
-        foreach (var item in heldItems)
+        for (int i = 0; i < heldItems.Count; i++)
         {
-            item.Use();
+            heldItems[i].Use(i);
         }
     }
 }

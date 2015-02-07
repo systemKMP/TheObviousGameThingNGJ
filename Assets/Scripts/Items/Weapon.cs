@@ -26,11 +26,11 @@ public class Weapon : ItemCore {
         }
     }
 
-    public override void Use()
+    public override void Use(int index)
     {
         if (readyForAttack)
         {
-            FireProjectile();
+            FireProjectile(index);
             readyForAttack = false;
             attackTimer = attackInterval;
             bullets--;
@@ -39,8 +39,8 @@ public class Weapon : ItemCore {
                 DestroyWeapon();
             }
         }
-        
-        base.Use();
+
+        base.Use(index);
     }
 
 
@@ -51,11 +51,15 @@ public class Weapon : ItemCore {
         Destroy(this);
     }
 
-    protected virtual void FireProjectile()
+    protected virtual void FireProjectile(int index)
     {
         var insProj = Instantiate(projectile, transform.position + transform.parent.localScale.x * Vector3.right * 0.7f, Quaternion.identity) as Projectile;
-
-        insProj.SetDirection(transform.parent.localScale.x * Vector2.right);
+        if (index > 0){
+            insProj.SetDirection(transform.parent.localScale.x * Vector2.right + new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
+        } else {
+            insProj.SetDirection(transform.parent.localScale.x * Vector2.right);
+        }
+        
         insProj.SetOwner(weaponOwner);
     }
 }

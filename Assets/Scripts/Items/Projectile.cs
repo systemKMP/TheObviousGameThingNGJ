@@ -27,12 +27,13 @@ public class Projectile : MonoBehaviour
     {
 
         var gObj = col.gameObject;
-        if (gObj.layer == 1 << 8) //if collides with player
+        if (gObj.layer == 8) //if collides with player
         {
             var playerCore = gObj.GetComponent<PlayerCore>();
             if (damageSelf || playerCore != projectileOwner)
             {
                 playerCore.Damage(projectileDamage);
+                Destroy(this.gameObject);
             }
         }
     }

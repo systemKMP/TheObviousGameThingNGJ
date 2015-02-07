@@ -5,7 +5,7 @@ public class ItemCore : MonoBehaviour {
 
     protected PlayerCore weaponOwner;
 
-    public virtual void Use()
+    public virtual void Use(int index)
     {
         
     }
