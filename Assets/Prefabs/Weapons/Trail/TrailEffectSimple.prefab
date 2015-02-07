@@ -1,87 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &182458
+--- !u!1 &120934
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 482458}
-  - 114: {fileID: 11482458}
-  - 50: {fileID: 5082458}
-  - 61: {fileID: 6182458}
-  - 199: {fileID: 19981706}
-  - 198: {fileID: 19881706}
-  m_Layer: 9
-  m_Name: Projectile
+  - 4: {fileID: 420934}
+  - 199: {fileID: 19991630}
+  - 198: {fileID: 19891630}
+  m_Layer: 0
+  m_Name: TrailEffectSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482458
+--- !u!4 &420934
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182458}
+  m_GameObject: {fileID: 120934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.8399963, y: 29.5400009, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 611}
+  m_LocalPosition: {x: 56.9300003, y: 18.8099995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5082458
-Rigidbody2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182458}
-  m_Mass: .00999999978
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!61 &6182458
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182458}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .800000012, y: .5}
-  m_Center: {x: 0, y: 0}
---- !u!114 &11482458
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef8b19ec0fac316478cf230d9c0dd939, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPrefab: {fileID: 0}
-  projectileSpeed: 20
-  survivalTime: 1
-  projectileDamage: 50
-  damageSelf: 0
-  trail: {fileID: 0}
-  destroyEffect: {fileID: 0}
---- !u!198 &19881706
+--- !u!198 &19891630
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182458}
+  m_GameObject: {fileID: 120934}
   lengthInSec: 5
   startDelay: 0
   speed: 1
@@ -1118,12 +1071,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19981706
+--- !u!199 &19991630
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182458}
+  m_GameObject: {fileID: 120934}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1159,6 +1112,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 182458}
+  m_RootGameObject: {fileID: 120934}
   m_IsPrefabParent: 1
   m_IsExploded: 1

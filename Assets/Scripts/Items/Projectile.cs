@@ -13,6 +13,11 @@ public class Projectile : MonoBehaviour
 
     protected PlayerCore projectileOwner;
 
+    public GameObject trail;
+    public GameObject destroyEffect;
+
+
+
     protected virtual void Start()
     {
         
@@ -60,6 +65,10 @@ public class Projectile : MonoBehaviour
         if (HitPrefab != null)
         {
             Instantiate(HitPrefab, transform.position, Quaternion.identity);
+        }
+        if (trail != null)
+        {
+            trail.transform.parent = null;
         }
     }
 }
