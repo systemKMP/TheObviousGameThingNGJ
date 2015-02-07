@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.2179565, y: 5.96468401, z: 0}
+  m_LocalPosition: {x: 264.700012, y: 110.379997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,15 +61,22 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: 2.24872589, y: 1.11421156}
-      - {x: -1.25531769, y: .998094082}
-      - {x: -1.27080536, y: .420048237}
-      - {x: -.658500671, y: -.536045551}
-      - {x: -.0765151978, y: -1.30774117}
-      - {x: 1.06782532, y: -1.31617117}
-      - {x: 2.0951767, y: -.237435818}
-      - {x: 2.85773468, y: .44124651}
-      - {x: 2.86547852, y: .79872942}
+    - - {x: 2.4637146, y: -.646408081}
+      - {x: 1.49569702, y: -.383560181}
+      - {x: .727416992, y: -.501708984}
+      - {x: -.688201904, y: -.536308289}
+      - {x: -1.49487305, y: -.578941345}
+      - {x: -1.68765259, y: -.992469788}
+      - {x: -1.4750061, y: -1.18441772}
+      - {x: -.636444092, y: -1.82978058}
+      - {x: -.844665527, y: -2.18990326}
+      - {x: -.375518799, y: -2.81095886}
+      - {x: .0328674316, y: -2.82277679}
+      - {x: .574645996, y: -2.80548096}
+      - {x: .78012085, y: -1.78646851}
+      - {x: 1.42663574, y: -1.34339905}
+      - {x: 1.97741699, y: -1.53997803}
+      - {x: 2.49917603, y: -1.08647156}
 --- !u!95 &9552966
 Animator:
   serializedVersion: 3
@@ -181,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2449831d2f9045246b7d27f4d01f7c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mover: {fileID: 11476090}
 --- !u!212 &21283480
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -201,7 +209,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 65c000eeefa2cb74c877708276ef4350, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a16c040665a095f41b4c79d9778f31a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
