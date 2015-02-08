@@ -43,12 +43,14 @@ public class WeaponSpawner : MonoBehaviour
                             var effect = (GameObject) Instantiate(AttachEffect, transform.position, transform.rotation);
                             effect.transform.parent = _currentWeapon.transform;
                             _currentWeapon.Effects.Add(effect);
+                            effect.transform.position += Vector3.forward*10;
                         }
                         if (DropEffect != null)
                         {
                             var hit = Physics2D.Raycast(transform.position, -Vector2.up, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Terrain"));
                             var effect = (GameObject)Instantiate(DropEffect, hit.point, Quaternion.identity);
                             _currentWeapon.Effects.Add(effect);
+                            effect.transform.position += Vector3.forward * 12;
                         }
                         break;
                     }
