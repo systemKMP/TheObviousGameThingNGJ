@@ -10,6 +10,7 @@ public class CameraFollower : MonoBehaviour
     public Vector2 Bounds = Vector2.one;
     private Vector3 _target;
     private Vector3 _origin;
+    private bool _viewToggle;
 
     public void Start()
     {
@@ -26,34 +27,37 @@ public class CameraFollower : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, _target, Lerp);
 
             var maxDist = players.Max(player => Vector2.Distance(player.transform.position, transform.position));
+            var maxDistY = players.Max(player => Mathf.Abs(player.transform.position.y - transform.position.y));
+
             var cam = GetComponentInChildren<Camera>();
             if (cam != null)
             {
-                cam.orthographicSize = Mathf.Min(Bounds.x / (cam.aspect * 2), Mathf.Lerp(cam.orthographicSize, maxDist + (players.Length == 1 ? Player1Margin : MorePlayerMargin), Lerp));
+                if (maxDistY > cam.orthographicSize) _viewToggle = true;
+                if (maxDistY < cam.orthographicSize*0.65f) _viewToggle = false;
+                Debug.Log(maxDistY + " " + cam.orthographicSize * 0.65f + " " + _viewToggle);
 
-                if (transform.position.x < _origin.x - Bounds.x / 2 + cam.orthographicSize * cam.aspect)
+                cam.orthographicSize =
+                    Mathf.Lerp(cam.orthographicSize, Mathf.Min(_viewToggle ? float.PositiveInfinity : Bounds.x / (cam.aspect * 2), 
+                        maxDist + (players.Length == 1 ? Player1Margin : MorePlayerMargin)), Lerp);
+
+                if (!_viewToggle)
                 {
-                    var pos = transform.position;
-                    pos.x = _origin.x - Bounds.x / 2 + cam.orthographicSize * cam.aspect;
-                    transform.position = pos;
-                }
-                if (transform.position.x > _origin.x + Bounds.x / 2 - cam.orthographicSize * cam.aspect)
-                {
-                    var pos = transform.position;
-                    pos.x = _origin.x + Bounds.x / 2 - cam.orthographicSize * cam.aspect;
-                    transform.position = pos;
+                    if (_target.x < _origin.x - Bounds.x / 2 + cam.orthographicSize * cam.aspect)
+                    {
+                        _target.x = _origin.x - Bounds.x / 2 + cam.orthographicSize * cam.aspect;
+                    }
+                    if (transform.position.x > _origin.x + Bounds.x / 2 - cam.orthographicSize * cam.aspect)
+                    {
+                        _target.x = _origin.x + Bounds.x / 2 - cam.orthographicSize * cam.aspect;
+                    }
                 }
                 if (transform.position.y < _origin.y - Bounds.y / 2 + cam.orthographicSize)
                 {
-                    var pos = transform.position;
-                    pos.y = _origin.y - Bounds.y / 2 + cam.orthographicSize;
-                    transform.position = pos;
+                    _target.y = _origin.y - Bounds.y / 2 + cam.orthographicSize;
                 }
                 if (transform.position.y > _origin.y + Bounds.y / 2 - cam.orthographicSize)
                 {
-                    var pos = transform.position;
-                    pos.y = _origin.y + Bounds.y / 2 - cam.orthographicSize;
-                    transform.position = pos;
+                    _target.y = _origin.y + Bounds.y / 2 - cam.orthographicSize;
                 }
             }
         }
