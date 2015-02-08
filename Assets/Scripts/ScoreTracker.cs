@@ -3,14 +3,13 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ScoreTracker
-{
+public class ScoreTracker {
 
     private static ScoreTracker _instance;
     private List<PlayerScore> playerScores;
 
-    public List<PlayerScore> Scores { get { return _instance.playerScores; } }
-
+    public List<PlayerScore> Scores { get { return _instance.playerScores; } } 
+    
     public static ScoreTracker Instance
     {
         get
@@ -33,7 +32,7 @@ public class ScoreTracker
         var scoreBoard = playerScores.SingleOrDefault(score => score.playerId == id);
         if (scoreBoard == null)
         {
-            scoreBoard = new PlayerScore() { playerId = id, core = core };
+            scoreBoard = new PlayerScore() {playerId = id, core = core};
             playerScores.Add(scoreBoard);
         }
         else
@@ -46,16 +45,9 @@ public class ScoreTracker
     {
         foreach (var player in playerScores)
         {
-            if (player.playerId == killerId)
+            if (player.playerId == killerId && casualtyId != killerId)
             {
-                if (casualtyId != killerId)
-                {
-                    player.kills++;
-                }
-                else
-                {
-                    player.kills--;
-                }
+                player.kills++;
             }
             if (player.playerId == casualtyId)
             {
@@ -64,10 +56,13 @@ public class ScoreTracker
         }
     }
 
+    public void Leave(int id)
+    {
+        playerScores.RemoveAll(score => score.playerId == id);
+    }
 }
 
-public class PlayerScore
-{
+public class PlayerScore {
     public int playerId;
     public PlayerCore core;
     public int deaths;

@@ -12,6 +12,8 @@ GameObject:
   - 199: {fileID: 19972136}
   - 114: {fileID: 11472136}
   - 58: {fileID: 5872136}
+  - 82: {fileID: 8296282}
+  - 114: {fileID: 11433872}
   m_Layer: 9
   m_Name: Explosion64
   m_TagString: Untagged
@@ -72,6 +74,85 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: 4
   m_Center: {x: 0, y: 0}
+--- !u!82 &8296282
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172136}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &11433872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e179d2adfd321344b84b25d3a1739346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8296282}
+  clips:
+  - {fileID: 8300000, guid: ba13f340f6a1a5f408e308a66ea01fbf, type: 3}
+  - {fileID: 8300000, guid: b39b2250977cbf64f9c5148e71d31120, type: 3}
+  - {fileID: 8300000, guid: 6abf90a14aed5c744ba4bac78544eca6, type: 3}
+  - {fileID: 8300000, guid: dd1920c1d0b33654096a9d9ab373d667, type: 3}
+  - {fileID: 8300000, guid: 470b55f77d0d72542974de6aa00ae013, type: 3}
+  - {fileID: 8300000, guid: 9ca7a858f5c8e844c98bc37229a3bab7, type: 3}
+  - {fileID: 8300000, guid: eaca02bee60da2e4db2212aee662cf7c, type: 3}
+  - {fileID: 8300000, guid: 3f728aff00d8ae34883b425da3b3f97e, type: 3}
 --- !u!114 &11472136
 MonoBehaviour:
   m_ObjectHideFlags: 1

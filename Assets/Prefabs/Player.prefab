@@ -249,7 +249,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   MaxWalkSpeed: 10
-  WalkFloatiness: .5
+  WalkFloatiness: .300000012
   AirWalkCurve:
     serializedVersion: 2
     m_Curve:
@@ -267,18 +267,19 @@ MonoBehaviour:
     m_PostInfinity: 2
   AirMaxWalkSpeed: 10
   AirWalkFloatiness: .100000001
+  JumpDuration: .200000003
   JumpForce: 20
   MaxJumps: 3
   StepTime: .200000003
   StepClips:
-  - {fileID: 8300000, guid: 031aa7076bd86e04db95441cb1f02255, type: 3}
-  - {fileID: 8300000, guid: 6245697ff67db424a92f77a086e31c63, type: 3}
-  - {fileID: 8300000, guid: 7b7dd8c792805884eba0bc880df0ac47, type: 3}
-  - {fileID: 8300000, guid: a9194c83d9211e842894697b39f00732, type: 3}
-  - {fileID: 8300000, guid: ba0a7223ce0e0084a83fcb6186fc7436, type: 3}
-  - {fileID: 8300000, guid: da18d5bb49296c84f97f5e62909c776f, type: 3}
-  - {fileID: 8300000, guid: fce0916c56e00b14bb4a203487482116, type: 3}
-  - {fileID: 8300000, guid: ff7e7bbda99fe554ca72d21a8c0b9616, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11476092
 MonoBehaviour:
   m_ObjectHideFlags: 1

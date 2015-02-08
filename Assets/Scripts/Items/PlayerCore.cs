@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class PlayerCore : MonoBehaviour {
+public class PlayerCore : MonoBehaviour
+{
 
     public int PlayerID;
 
     public AudioSource Audio;
-    
+
     public List<ItemCore> HeldItems;
 
     public int MaxHealth;
@@ -55,6 +56,8 @@ public class PlayerCore : MonoBehaviour {
         {
             _sprite.color = _originalColor;
         }
+
+        if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth, Controller.Index);
     }
 
     public void Damage(int projectileDamage, int killerId)
@@ -88,7 +91,7 @@ public class PlayerCore : MonoBehaviour {
             }
 
 
-        
+
         }
 
 
@@ -99,7 +102,7 @@ public class PlayerCore : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         var gObj = col.transform.gameObject;
-        
+
         if (gObj.layer == 10) //if collides with player
         {
             var item = gObj.GetComponent<Weapon>();
