@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 469846}
   - 50: {fileID: 5069846}
-  - 114: {fileID: 11469846}
   - 82: {fileID: 8219346}
   - 212: {fileID: 21241022}
   - 61: {fileID: 6141022}
+  - 114: {fileID: 11453726}
   m_Layer: 10
   m_Name: BasicWeapon
   m_TagString: Untagged
@@ -116,7 +116,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11469846
+--- !u!114 &11453726
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -124,18 +124,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 169846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42019b250b81b6d4298257685082b912, type: 3}
+  m_Script: {fileID: 11500000, guid: aead8af8141c82b4c940c84cfb91766b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   used: 0
-  HoverHeight: 5
+  HoverHeight: 0
   Effects: []
-  ammo: 20
+  ammo: 10
   projectile: {fileID: 11482458, guid: ad95cbe73c25ca2469d3e52b7dc37c88, type: 2}
   attackInterval: .200000003
   Clip: {fileID: 8300000, guid: e78f0b959c9055846a10c82a978d9154, type: 3}
   angularVelocityMin: 0
   angularVelocityMax: 0
+  thorwAngle: 0
+  randomRange: 5
 --- !u!212 &21241022
 SpriteRenderer:
   m_ObjectHideFlags: 1

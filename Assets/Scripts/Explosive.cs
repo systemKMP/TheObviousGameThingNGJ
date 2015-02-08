@@ -30,7 +30,6 @@ public class Explosive : Projectile {
     void OnTriggerEnter2D(Collider2D col)
     {
         var gObj = col.gameObject;
-        //Debug.Log(gObj.layer);
         if (gObj.layer == 8)
         {
             var playerCore = gObj.GetComponent<PlayerCore>();

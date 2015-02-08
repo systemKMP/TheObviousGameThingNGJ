@@ -129,10 +129,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used: 0
   HoverHeight: 4
+  Effects: []
   ammo: 2
   projectile: {fileID: 11472590, guid: 8ce871ef378edf64bb4a898856889985, type: 2}
   attackInterval: 2
-  Clip: {fileID: 8300000, guid: e78f0b959c9055846a10c82a978d9154, type: 3}
+  Clip: {fileID: 8300000, guid: 2d0df334834162042a7e912d382f6ddb, type: 3}
   angularVelocityMin: 300
   angularVelocityMax: 400
 --- !u!212 &21285696
