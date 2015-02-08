@@ -40,11 +40,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
+  - {fileID: 11405726, guid: 4c3fe2f36de9ab74fb677b917ed8759b, type: 2}
+  - {fileID: 11485696, guid: 84bc0328026079044b7bb70985a278e3, type: 2}
   - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 11469846, guid: 26dc7fdc41b6dc340801fb246dee6502, type: 2}
+  - {fileID: 11493244, guid: 114a4545052178944adefa35191e3cc8, type: 2}
+  - {fileID: 11409588, guid: bc1586c4a31bbc447a778534dbf2cd8f, type: 2}
+  - {fileID: 11401888, guid: 4b3d953c6ae70974cb812c0e67c2ea47, type: 2}
+  - {fileID: 11491108, guid: ce51f8559387ae943bdfa1fd31e17f5d, type: 2}
+  - {fileID: 11469846, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
   Rates:
   - 2
-  SpawnMin: 2
-  SpawnMax: 4
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  SpawnMin: 5
+  SpawnMax: 15
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
   DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!1001 &100100000
