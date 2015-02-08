@@ -306,12 +306,29 @@ MonoBehaviour:
   PlayerID: 1
   Audio: {fileID: 8281660}
   HeldItems: []
+  PenalityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  PenalityMultiplier: 1
   MaxHealth: 1000
   Controller: {fileID: 0}
   HitClips:
   - {fileID: 8300000, guid: 83141791106fb444e8352ddc7206ded5, type: 3}
   - {fileID: 8300000, guid: 0ad357c192bdd534cbf9584a432ab821, type: 3}
   - {fileID: 8300000, guid: 08c2e82a35d433d4ba6d25c82dc4c85d, type: 3}
+  DropEffect: {fileID: 0}
   weaponLimit: 15
 --- !u!114 &11485278
 MonoBehaviour:
