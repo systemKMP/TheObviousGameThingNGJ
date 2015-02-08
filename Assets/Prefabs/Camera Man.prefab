@@ -276,7 +276,7 @@ MonoBehaviour:
   Lerp: .00999999978
   Player1Margin: 10
   MorePlayerMargin: 4
-  SpeedCompensation: 2
+  SpeedCompensation: 0
   Bounds: {x: 66, y: 50}
 --- !u!124 &12497784
 Behaviour:

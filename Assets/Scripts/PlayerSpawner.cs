@@ -44,7 +44,7 @@ public class PlayerSpawner : MonoBehaviour
             ScoreTracker.Instance.RegisterPlayer(i, player.GetComponent<PlayerCore>());
             GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
             GetComponent<AudioSource>().Play();
-            if(SpawnEffect.Length > i) Destroy(Instantiate(SpawnEffect[i],player.transform.position,Quaternion.identity),4);
+            if(SpawnEffect.Length >= i) Destroy(Instantiate(SpawnEffect[i-1],player.transform.position,Quaternion.identity),4);
         }
 
         if (Players.ContainsKey(0) && Players[0] == null) Players.Remove(0);

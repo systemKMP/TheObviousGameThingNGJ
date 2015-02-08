@@ -104,10 +104,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4655a3a80de76524fb4a6dd746eb1632, type: 3}
   - {fileID: 8300000, guid: b4b69f79d9604fa49afa49fcd23e3d2b, type: 3}
   SpawnEffect:
+  - {fileID: 112898, guid: c569818610757884897c108e10424a59, type: 2}
   - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
-  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
-  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
-  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: 453b206d1093df84d9bd319d9ad4c64b, type: 2}
+  - {fileID: 112898, guid: b0c47ec473797cc498c0c1142dc559e4, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
