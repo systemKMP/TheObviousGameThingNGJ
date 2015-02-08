@@ -341,7 +341,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0ad357c192bdd534cbf9584a432ab821, type: 3}
   - {fileID: 8300000, guid: 08c2e82a35d433d4ba6d25c82dc4c85d, type: 3}
   DropEffect: {fileID: 0}
-  DeathEffect: {fileID: 0}
+  DeathEffect:
+  - {fileID: 191372, guid: c085211d65cdf19439f38512064114ca, type: 2}
+  - {fileID: 191372, guid: 4a4898b6c2058f14d8039863e13bdc00, type: 2}
+  - {fileID: 191372, guid: 63f9b5adc7efe2543a616ec378e853bb, type: 2}
+  - {fileID: 191372, guid: c66cdd5602800ea469451b02f1467ed2, type: 2}
   weaponLimit: 15
 --- !u!114 &11485278
 MonoBehaviour:
