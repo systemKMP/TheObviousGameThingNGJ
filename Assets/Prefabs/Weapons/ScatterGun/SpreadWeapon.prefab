@@ -132,11 +132,11 @@ MonoBehaviour:
   Effects: []
   ammo: 10
   projectile: {fileID: 11414464, guid: b85f9e1ce4885074383e456e55e8cefb, type: 2}
-  attackInterval: 2
+  attackInterval: 1.29999995
   Clip: {fileID: 8300000, guid: b57914569ce0e8f488a53e17c9448387, type: 3}
   angularVelocityMin: 0
   angularVelocityMax: 0
-  bullets: 5
+  bullets: 7
   spreadAngle: 60
 --- !u!212 &21250696
 SpriteRenderer:

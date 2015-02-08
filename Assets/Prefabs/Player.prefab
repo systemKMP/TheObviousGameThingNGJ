@@ -365,7 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 1
   Audio: {fileID: 8281660}
-  HeldItems: []
+  HeldItems:
+  - {fileID: 11453726, guid: 4510b318894e5624ba94e15c05b6028c, type: 2}
   PenalityCurve:
     serializedVersion: 2
     m_Curve:
