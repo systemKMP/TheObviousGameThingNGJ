@@ -14,6 +14,10 @@ public class Explosive : Projectile {
         base.Start();
         currentTimer = collisionValidityTimer;
         damagedPlayers = new List<PlayerCore>();
+        if (!Application.isPlaying)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     protected override void Update()

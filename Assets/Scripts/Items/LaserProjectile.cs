@@ -14,6 +14,18 @@ public class LaserProjectile : Projectile
     private Vector2 _direction;
     private bool _hit;
 
+    public AudioSource audioSource;
+
+    public AudioClip chargeSound;
+    public AudioClip fireSound;
+
+    protected override void Start()
+    {
+        audioSource.clip = chargeSound;
+        audioSource.Play();
+        base.Start();
+    }
+
     public override void SetDirection(Vector2 direction, float angluarVelocity = 0.0f)
     {
         _direction = direction;
@@ -37,6 +49,9 @@ public class LaserProjectile : Projectile
             _line.SetWidth(w, w);
             if (!_hit && _time / survivalTime > HitTime)
             {
+                audioSource.clip = fireSound;
+                audioSource.Play();
+
                 RaycastHit2D hit =
                     Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) + _direction * 3, _direction, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Player"));
                 if (hit.transform != null && (damageSelf || (projectileOwner == null || hit.transform != projectileOwner.transform)))
