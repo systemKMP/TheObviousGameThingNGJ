@@ -4201,6 +4201,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 075adc505b7d2874998c8b9aa23ce660, type: 3}
   - {fileID: 8300000, guid: 4655a3a80de76524fb4a6dd746eb1632, type: 3}
   - {fileID: 8300000, guid: b4b69f79d9604fa49afa49fcd23e3d2b, type: 3}
+  SpawnEffect:
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
 --- !u!4 &503608840
 Transform:
   m_ObjectHideFlags: 0
@@ -9979,6 +9984,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 075adc505b7d2874998c8b9aa23ce660, type: 3}
   - {fileID: 8300000, guid: 4655a3a80de76524fb4a6dd746eb1632, type: 3}
   - {fileID: 8300000, guid: b4b69f79d9604fa49afa49fcd23e3d2b, type: 3}
+  SpawnEffect:
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
 --- !u!4 &1360108209
 Transform:
   m_ObjectHideFlags: 0
@@ -13482,6 +13492,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 075adc505b7d2874998c8b9aa23ce660, type: 3}
   - {fileID: 8300000, guid: 4655a3a80de76524fb4a6dd746eb1632, type: 3}
   - {fileID: 8300000, guid: b4b69f79d9604fa49afa49fcd23e3d2b, type: 3}
+  SpawnEffect:
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
 --- !u!4 &1912280918
 Transform:
   m_ObjectHideFlags: 0
@@ -15633,6 +15648,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 075adc505b7d2874998c8b9aa23ce660, type: 3}
   - {fileID: 8300000, guid: 4655a3a80de76524fb4a6dd746eb1632, type: 3}
   - {fileID: 8300000, guid: b4b69f79d9604fa49afa49fcd23e3d2b, type: 3}
+  SpawnEffect:
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
+  - {fileID: 112898, guid: ec399c193e857b04081b04d2a73560ac, type: 2}
 --- !u!4 &2064414827
 Transform:
   m_ObjectHideFlags: 0

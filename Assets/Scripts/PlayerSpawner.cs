@@ -11,6 +11,7 @@ public class PlayerSpawner : MonoBehaviour
 
     public PlayerMovement PlayerPrefab;
     public AudioClip[] SpawnClips;
+    public GameObject[] SpawnEffect;
 
     public void Awake()
     {
@@ -43,6 +44,7 @@ public class PlayerSpawner : MonoBehaviour
             ScoreTracker.Instance.RegisterPlayer(i, player.GetComponent<PlayerCore>());
             GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
             GetComponent<AudioSource>().Play();
+            if(SpawnEffect.Length > i) Destroy(Instantiate(SpawnEffect[i],player.transform.position,Quaternion.identity),4);
         }
 
         if (Players.ContainsKey(0) && Players[0] == null) Players.Remove(0);
@@ -62,6 +64,7 @@ public class PlayerSpawner : MonoBehaviour
             ScoreTracker.Instance.RegisterPlayer(0, keyboardplayer.GetComponent<PlayerCore>());
             GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
             GetComponent<AudioSource>().Play();
+            if (SpawnEffect.Length > 0) Destroy(Instantiate(SpawnEffect[0], keyboardplayer.transform.position, Quaternion.identity), 4);
         }
     }
 
