@@ -312,6 +312,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 83141791106fb444e8352ddc7206ded5, type: 3}
   - {fileID: 8300000, guid: 0ad357c192bdd534cbf9584a432ab821, type: 3}
   - {fileID: 8300000, guid: 08c2e82a35d433d4ba6d25c82dc4c85d, type: 3}
+  weaponLimit: 15
 --- !u!114 &11485278
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -56,7 +56,7 @@ public class Weapon : ItemCore {
 
 
 
-    protected virtual void DestroyWeapon()
+    public virtual void DestroyWeapon()
     {
         weaponOwner.RemoveItem(this);
         Destroy(this.gameObject, 2.0f);

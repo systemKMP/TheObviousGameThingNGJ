@@ -25,6 +25,9 @@ public class PlayerCore : MonoBehaviour
     private SpriteRenderer _sprite;
     private float _hit;
 
+    [Range(1, 30)]
+    public int weaponLimit;
+
     void Start()
     {
         Controller = gameObject.GetComponent<PlayerController>();
@@ -103,7 +106,7 @@ public class PlayerCore : MonoBehaviour
     {
         var gObj = col.transform.gameObject;
 
-        if (gObj.layer == 10) //if collides with player
+        if (gObj.layer == 10) //if collides with item
         {
             var item = gObj.GetComponent<Weapon>();
             if (!item.used)
@@ -118,7 +121,10 @@ public class PlayerCore : MonoBehaviour
                 item.SetOwner(this);
             }
 
-
+            if (weaponLimit < HeldItems.Count)
+            {
+                ((Weapon)HeldItems[0]).DestroyWeapon();
+            }
         }
     }
 

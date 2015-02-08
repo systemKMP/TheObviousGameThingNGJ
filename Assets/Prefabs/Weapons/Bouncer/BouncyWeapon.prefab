@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.889513, y: 17.8129253, z: 0}
+  m_LocalPosition: {x: 36.93647, y: 21.3357105, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +40,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 105726}
   m_Mass: .00999999978
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -56,7 +56,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1.29999995, y: 1.29999995}
+  m_Size: {x: 1.60000002, y: 1.10000002}
   m_Center: {x: 0, y: 0}
 --- !u!82 &8205726
 AudioSource:
@@ -129,14 +129,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used: 0
   HoverHeight: 3
-  ammo: 5
-  projectile: {fileID: 11455364, guid: cb58b4a419a880048a0ce58e02c8094b, type: 2}
-  attackInterval: 1
+  ammo: 10
+  projectile: {fileID: 11436242, guid: 4c4b284f72703d14dbf7ec28ea92eb73, type: 2}
+  attackInterval: .5
   Clip: {fileID: 8300000, guid: f3218b62a13baa54598b96f2d4dc6f84, type: 3}
-  angularVelocityMin: 0
-  angularVelocityMax: 0
-  thorwAngle: 5
-  randomRange: 3
+  angularVelocityMin: 400
+  angularVelocityMax: 600
+  thorwAngle: 7
+  randomRange: 5
 --- !u!212 &21205726
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ebc550ce8139ea4d82876f61633c02a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 608251059081a99429d581376c350c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

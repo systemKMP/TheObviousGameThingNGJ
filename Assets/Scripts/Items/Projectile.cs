@@ -45,7 +45,8 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void ProperDestroy(){
+    public void ProperDestroy()
+    {
         if (HitPrefab != null)
         {
             Instantiate(HitPrefab, transform.position, Quaternion.identity);
@@ -97,9 +98,9 @@ public class Projectile : MonoBehaviour
 
     public void SetOwner(ref PlayerCore owner)
     {
-        
+
         this.projectileOwner = owner;
-        if (!damageSelf)
+        if (!damageSelf && owner != null)
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), owner.GetComponent<Collider2D>());
         }

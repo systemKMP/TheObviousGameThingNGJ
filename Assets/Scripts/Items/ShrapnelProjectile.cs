@@ -62,7 +62,6 @@ public class ShrapnelProjectile : Projectile {
                 insProj.SetDirection(proj.velocity, angVelocity);
 
                 insProj.SetOwner(ref proj.owner);
-                Debug.Log("spawning");
                 
             }
         }

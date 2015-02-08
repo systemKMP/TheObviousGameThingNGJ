@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 436242}
   - 114: {fileID: 11436242}
   - 50: {fileID: 5036242}
-  - 61: {fileID: 6136242}
   - 212: {fileID: 21236242}
+  - 58: {fileID: 5896652}
   m_Layer: 9
   m_Name: BouncyProjectile
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.368763, y: 19.716608, z: 0}
+  m_LocalPosition: {x: 37.7495918, y: 21.8462753, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -37,7 +37,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136242}
-  m_Mass: .00999999978
+  m_Mass: .0500000007
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: .349999994
@@ -46,16 +46,16 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6136242
-BoxCollider2D:
+--- !u!58 &5896652
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136242}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: c901ff4213a21a147ba004d362c0b824, type: 2}
+  m_Material: {fileID: 6200000, guid: 9daa660a69073c74b8ffaec21d664eac, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .5}
+  m_Radius: .5
   m_Center: {x: 0, y: 0}
 --- !u!114 &11436242
 MonoBehaviour:
@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPrefab: {fileID: 0}
-  projectileSpeed: 35
-  survivalTime: 5
+  projectileSpeed: 30
+  survivalTime: 3
   projectileDamage: 30
   damageSelf: 0
   trail: {fileID: 19891630, guid: 7efc352218332db42a1b4c9d9e0d81ca, type: 2}
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 43b2c328c32f78d4fb6a87fed17f9786, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 405ccbbaae1e2164c8e1e4a8600a36da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
