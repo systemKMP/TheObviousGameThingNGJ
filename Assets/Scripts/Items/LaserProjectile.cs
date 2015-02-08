@@ -39,10 +39,11 @@ public class LaserProjectile : Projectile
             {
                 RaycastHit2D hit =
                     Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) + _direction * 3, _direction, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Player"));
-                if (hit.transform != null && (damageSelf || hit.transform != projectileOwner.transform))
+                if (hit.transform != null && (damageSelf || (projectileOwner == null || hit.transform != projectileOwner.transform)))
                 {
                     var core = hit.transform.GetComponent<PlayerCore>();
-                    if (core != null) core.Damage(projectileDamage, projectileOwner.Controller.Index);
+                    var index = projectileOwner != null ? projectileOwner.Controller.Index : 0;
+                    if (core != null) core.Damage(projectileDamage, index);
                     Destroy(Instantiate(HitPrefab, hit.point, Quaternion.identity), 2);
                 }
                 _hit = true;
