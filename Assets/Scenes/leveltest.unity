@@ -3859,12 +3859,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 0}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
   - 2
   SpawnMin: 2
   SpawnMax: 4
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!4 &429089810
 Transform:
   m_ObjectHideFlags: 0
@@ -5053,12 +5054,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 0}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
   - 2
   SpawnMin: 2
   SpawnMax: 4
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!4 &658461489
 Transform:
   m_ObjectHideFlags: 0
@@ -5651,7 +5653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465728, guid: aa9915d78d339a2468a6f2ce27212fe0, type: 2}
       propertyPath: m_RootOrder
-      value: 144
+      value: 143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa9915d78d339a2468a6f2ce27212fe0, type: 2}
@@ -10061,12 +10063,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 0}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
   - 2
   SpawnMin: 2
   SpawnMax: 4
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!4 &1384173295
 Transform:
   m_ObjectHideFlags: 0
@@ -11854,6 +11857,7 @@ MonoBehaviour:
   SpawnMin: 2
   SpawnMax: 4
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!4 &1652080633
 Transform:
   m_ObjectHideFlags: 0
@@ -12276,12 +12280,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 0}
+  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
   Rates:
   - 2
   SpawnMin: 2
   SpawnMax: 4
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!4 &1727403667
 Transform:
   m_ObjectHideFlags: 0
@@ -12879,56 +12884,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 39
---- !u!1 &1841808728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1841808730}
-  - 212: {fileID: 1841808729}
-  m_Layer: 0
-  m_Name: tex_dodads_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1841808729
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1841808728}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: cbb70a7e8933e54428de7dae7df9bd24, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1841808730
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1841808728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.5999985, y: -3.29999995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: .5}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 152
 --- !u!1 &1844499698
 GameObject:
   m_ObjectHideFlags: 0
@@ -15244,6 +15199,7 @@ MonoBehaviour:
   SpawnMin: 2
   SpawnMax: 4
   AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!4 &2023252140
 Transform:
   m_ObjectHideFlags: 0

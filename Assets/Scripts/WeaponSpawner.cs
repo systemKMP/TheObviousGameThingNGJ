@@ -11,6 +11,7 @@ public class WeaponSpawner : MonoBehaviour
     public float SpawnMax = 4;
 
     public GameObject AttachEffect;
+    public GameObject DropEffect;
 
     private float _time;
     private Weapon _currentWeapon;
@@ -32,6 +33,7 @@ public class WeaponSpawner : MonoBehaviour
                 var accum = 0f;
                 for (int i = 0; i < Rates.Count; i++)
                 {
+                    if(Weapons[i] == null){Debug.LogWarning("Weapon is null");continue;}
                     accum += Rates[i];
                     if (result < accum)
                     {
@@ -40,6 +42,12 @@ public class WeaponSpawner : MonoBehaviour
                         {
                             var effect = (GameObject) Instantiate(AttachEffect, transform.position, transform.rotation);
                             effect.transform.parent = _currentWeapon.transform;
+                            _currentWeapon.Effects.Add(effect);
+                        }
+                        if (DropEffect != null)
+                        {
+                            var hit = Physics2D.Raycast(transform.position, -Vector2.up, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Terrain"));
+                            var effect = (GameObject)Instantiate(DropEffect, hit.point, Quaternion.identity);
                             _currentWeapon.Effects.Add(effect);
                         }
                         break;
