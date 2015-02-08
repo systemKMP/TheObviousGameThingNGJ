@@ -134,10 +134,10 @@ MonoBehaviour:
   projectile: {fileID: 11471024, guid: 9d21fe65260708c43be2cfa59b27c412, type: 2}
   attackInterval: 1
   Clip: {fileID: 8300000, guid: f3218b62a13baa54598b96f2d4dc6f84, type: 3}
-  angularVelocityMin: 0
-  angularVelocityMax: 0
+  angularVelocityMin: 50
+  angularVelocityMax: 100
   thorwAngle: 60
-  randomRange: 0
+  randomRange: 5
 --- !u!212 &21283006
 SpriteRenderer:
   m_ObjectHideFlags: 1
