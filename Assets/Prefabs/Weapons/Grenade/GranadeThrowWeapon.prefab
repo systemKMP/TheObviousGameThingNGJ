@@ -128,11 +128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used: 0
-  HoverHeight: 5
+  HoverHeight: 5.5
+  Effects: []
   ammo: 5
   projectile: {fileID: 11455364, guid: cb58b4a419a880048a0ce58e02c8094b, type: 2}
   attackInterval: 1
   Clip: {fileID: 8300000, guid: f3218b62a13baa54598b96f2d4dc6f84, type: 3}
+  angularVelocityMin: 0
+  angularVelocityMax: 0
   thorwAngle: 60
   randomRange: 0
 --- !u!212 &21225596
