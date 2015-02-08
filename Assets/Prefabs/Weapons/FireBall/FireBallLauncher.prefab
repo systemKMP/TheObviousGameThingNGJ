@@ -133,7 +133,7 @@ MonoBehaviour:
   ammo: 2
   projectile: {fileID: 11472590, guid: 8ce871ef378edf64bb4a898856889985, type: 2}
   attackInterval: 2
-  Clip: {fileID: 8300000, guid: 2d0df334834162042a7e912d382f6ddb, type: 3}
+  Clip: {fileID: 8300000, guid: 0231b1dcfd3329f46ae2d2ad57fdb813, type: 3}
   angularVelocityMin: 300
   angularVelocityMax: 400
 --- !u!212 &21285696
