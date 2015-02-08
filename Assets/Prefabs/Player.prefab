@@ -329,7 +329,7 @@ MonoBehaviour:
   AirWalkFloatiness: .100000001
   JumpDuration: .200000003
   JumpForce: 20
-  MaxJumps: 3
+  MaxJumps: 2
   StepTime: .200000003
   StepClips:
   - {fileID: 8300000, guid: f588700062c964e1bb89e360ef66befd, type: 3}

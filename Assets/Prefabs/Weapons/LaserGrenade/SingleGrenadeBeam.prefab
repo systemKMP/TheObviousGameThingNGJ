@@ -57,7 +57,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .600000024
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   HitTime: .850000024
   audioSource: {fileID: 8278472}
-  chargeSound: {fileID: 0}
+  chargeSound: {fileID: 8300000, guid: c9526b84470969b44b1e401f19ad1f24, type: 3}
   fireSound: {fileID: 8300000, guid: 3d16b9ba9dc77924983492f2ccc68c7d, type: 3}
 --- !u!120 &12093738
 LineRenderer:
