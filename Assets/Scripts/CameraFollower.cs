@@ -10,6 +10,7 @@ public class CameraFollower : MonoBehaviour
     public float SpeedCompensation = 10;
     public Vector2 Bounds = Vector2.one;
     private Vector3 _target;
+    public int minSize = 100;
 
     public void Start()
     {
@@ -36,6 +37,7 @@ public class CameraFollower : MonoBehaviour
             {
                 cam.orthographicSize =
                     Mathf.Lerp(cam.orthographicSize, maxDist/1.5f + (players.Length == 1 ? Player1Margin : MorePlayerMargin), Lerp);
+                cam.orthographicSize = minSize > cam.orthographicSize ? minSize : cam.orthographicSize;
             }
         }
     }

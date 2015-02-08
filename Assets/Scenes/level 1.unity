@@ -1772,6 +1772,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11497784, guid: bcdf2813f47d7cb4dbe5b10787aa518a, type: 2}
+      propertyPath: minSize
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcdf2813f47d7cb4dbe5b10787aa518a, type: 2}
   m_RootGameObject: {fileID: 1193816154}
@@ -11101,6 +11105,7 @@ MonoBehaviour:
   MorePlayerMargin: 1
   SpeedCompensation: 0
   Bounds: {x: 66, y: 50}
+  minSize: 20
 --- !u!114 &1193816157
 MonoBehaviour:
   m_ObjectHideFlags: 0
