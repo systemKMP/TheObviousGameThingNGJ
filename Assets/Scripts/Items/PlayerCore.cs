@@ -25,6 +25,7 @@ public class PlayerCore : MonoBehaviour
     public AudioClip[] HitClips = new AudioClip[0];
 
     public GameObject DropEffect;
+    public GameObject DeathEffect;
 
     private Color _originalColor;
     private SpriteRenderer _sprite;
@@ -74,7 +75,7 @@ public class PlayerCore : MonoBehaviour
         Audio.clip = HitClips[Random.Range(0, HitClips.Length)];
         Audio.Play();
 
-        CurrentHealth -= Mathf.FloorToInt(projectileDamage * (1 + PenalityCurve.Evaluate((float)HeldItems.Count/weaponLimit)*PenalityMultiplier));
+        CurrentHealth -= Mathf.FloorToInt(projectileDamage * (1 + PenalityCurve.Evaluate((float)HeldItems.Count / weaponLimit) * PenalityMultiplier));
         if (CurrentHealth <= 0)
         {
             ScoreTracker.Instance.RecordKill(killerId, Controller.Index);
@@ -95,9 +96,9 @@ public class PlayerCore : MonoBehaviour
 
                 if (DropEffect != null)
                 {
-                    var effect = (GameObject) Instantiate(DropEffect, HeldItems[i].transform.position, HeldItems[i].transform.rotation);
+                    var effect = (GameObject)Instantiate(DropEffect, HeldItems[i].transform.position, HeldItems[i].transform.rotation);
                     effect.transform.parent = HeldItems[i].transform;
-                    effect.transform.position += Vector3.forward*1;
+                    effect.transform.position += Vector3.forward * 1;
                     HeldItems[i].Effects.Add(effect);
                 }
 
@@ -106,6 +107,8 @@ public class PlayerCore : MonoBehaviour
 
             }
         }
+
+        if (DeathEffect != null) Destroy(Instantiate(DeathEffect, transform.position, Quaternion.identity), 4);
 
         Destroy(this.gameObject);
     }
