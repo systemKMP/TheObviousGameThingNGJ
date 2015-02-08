@@ -7,6 +7,7 @@ public class CameraFollower : MonoBehaviour
     public float Lerp = 0.3f;
     public float Player1Margin = 10;
     public float MorePlayerMargin = 4;
+    public float SpeedCompensation = 10;
     public Vector2 Bounds = Vector2.one;
     private Vector3 _target;
     private Vector3 _origin;
@@ -26,15 +27,14 @@ public class CameraFollower : MonoBehaviour
             _target = Vector3.Lerp(_target, new Vector3(average.x, average.y, transform.position.z), Lerp);
             transform.position = Vector3.Lerp(transform.position, _target, Lerp);
 
-            var maxDist = players.Max(player => Vector2.Distance(player.transform.position, transform.position));
-            var maxDistY = players.Max(player => Mathf.Abs(player.transform.position.y - transform.position.y));
+            var maxDist = players.Max(player => Vector2.Distance((player.transform.position + (Vector3)player.rigidbody2D.velocity*SpeedCompensation), transform.position));
+            var maxDistY = players.Max(player => Mathf.Abs((player.transform.position + (Vector3)player.rigidbody2D.velocity * SpeedCompensation).y - transform.position.y));
 
             var cam = GetComponentInChildren<Camera>();
             if (cam != null)
             {
                 if (maxDistY > cam.orthographicSize) _viewToggle = true;
                 if (maxDistY < cam.orthographicSize*0.65f) _viewToggle = false;
-                Debug.Log(maxDistY + " " + cam.orthographicSize * 0.65f + " " + _viewToggle);
 
                 cam.orthographicSize =
                     Mathf.Lerp(cam.orthographicSize, Mathf.Min(_viewToggle ? float.PositiveInfinity : Bounds.x / (cam.aspect * 2), 
