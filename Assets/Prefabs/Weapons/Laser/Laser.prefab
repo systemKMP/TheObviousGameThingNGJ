@@ -119,7 +119,7 @@ MonoBehaviour:
   HitPrefab: {fileID: 152556, guid: 4cf523b6d0e16bd4d83c4bdd692e8ed7, type: 2}
   projectileSpeed: 0
   survivalTime: 1
-  projectileDamage: 100
+  projectileDamage: 170
   damageSelf: 0
   trail: {fileID: 19891630, guid: 7efc352218332db42a1b4c9d9e0d81ca, type: 2}
   destroyEffect: {fileID: 0}

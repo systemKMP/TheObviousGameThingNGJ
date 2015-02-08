@@ -146,7 +146,7 @@ MonoBehaviour:
   HitPrefab: {fileID: 0}
   projectileSpeed: 0
   survivalTime: .300000012
-  projectileDamage: 100
+  projectileDamage: 120
   damageSelf: 1
   trail: {fileID: 0}
   destroyEffect: {fileID: 0}
