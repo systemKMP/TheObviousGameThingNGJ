@@ -66,15 +66,18 @@ public class PlayerCore : MonoBehaviour
             _sprite.color = _originalColor;
         }
 
-        if(Controller)
+        if (Controller)
             if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth, Controller.Index);
     }
 
     public void Damage(int projectileDamage, int killerId)
     {
         UI.Instance.Hit[Controller.Index] = _hit = 0.5f;
-        Audio.clip = HitClips[Random.Range(0, HitClips.Length)];
-        Audio.Play();
+        if (Audio != null)
+        {
+            Audio.clip = HitClips[Random.Range(0, HitClips.Length)];
+            Audio.Play();
+        }
 
         CurrentHealth -= Mathf.FloorToInt((float)projectileDamage * (1.0f + PenalityCurve.Evaluate((float)HeldItems.Count / (float)weaponLimit) * PenalityMultiplier));
         if (CurrentHealth <= 0)
@@ -90,6 +93,7 @@ public class PlayerCore : MonoBehaviour
         {
             if (Random.Range(0, 2) == 0)
             {
+                if (HeldItems[i] == null) continue;
                 HeldItems[i].GetComponent<Rigidbody2D>().isKinematic = false;
                 HeldItems[i].GetComponent<Collider2D>().enabled = true;
                 HeldItems[i].transform.parent = null;
@@ -109,9 +113,11 @@ public class PlayerCore : MonoBehaviour
             }
         }
 
-        if (DeathEffect.Length >= Controller.Index) Destroy(Instantiate(DeathEffect[Controller.Index-1], transform.position, Quaternion.identity), 4);
+        if (this != null)
+            if (DeathEffect.Length >= Controller.Index) Destroy(Instantiate(DeathEffect[Controller.Index - 1], transform.position, Quaternion.identity), 4);
 
-        Destroy(this.gameObject);
+        if (this != null)
+            Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D col)

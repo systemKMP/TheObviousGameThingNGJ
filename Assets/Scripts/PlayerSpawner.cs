@@ -16,7 +16,7 @@ public class PlayerSpawner : MonoBehaviour
     public void Awake()
     {
         if (_instance == null) _instance = this;
-        _spawnPoints.Add(this);
+        _instance._spawnPoints.Add(this);
     }
 
     public void Update()
@@ -29,7 +29,7 @@ public class PlayerSpawner : MonoBehaviour
         for (int i = 1; i <= 8; i++)
         {
             if (_players.ContainsKey(i) && _players[i] == null) _players.Remove(i);
-            if (_players.ContainsKey(i) || !Input.GetKey("joystick " + i + " button 2")) continue;
+            if (_players.ContainsKey(i) || !Input.GetKey("joystick " + i + " button 2") || !UI.Instance.CanSpawn) continue;
 
             var player = (PlayerMovement)Instantiate(PlayerPrefab, 
                 (_spawnPoints.SingleOrDefault(spawner => Vector3.Distance(spawner.transform.position, averageplayer) == maxDist)??
@@ -48,7 +48,7 @@ public class PlayerSpawner : MonoBehaviour
         }
 
         if (_players.ContainsKey(0) && _players[0] == null) _players.Remove(0);
-        if (!_players.ContainsKey(0) && Input.GetKey(KeyCode.Space))
+        if (!_players.ContainsKey(0) && Input.GetKey(KeyCode.Space) && UI.Instance.CanSpawn)
         {
             var keyboardplayer = (PlayerMovement)Instantiate(PlayerPrefab,
                 (_spawnPoints.SingleOrDefault(spawner => Vector3.Distance(spawner.transform.position, averageplayer) == maxDist) ??
