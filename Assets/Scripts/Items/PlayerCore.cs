@@ -79,7 +79,7 @@ public class PlayerCore : MonoBehaviour
             Audio.Play();
         }
 
-        CurrentHealth -= Mathf.FloorToInt((float)projectileDamage * (1.0f + PenalityCurve.Evaluate((float)HeldItems.Count / (float)weaponLimit) * PenalityMultiplier));
+        CurrentHealth -= Mathf.FloorToInt((float)projectileDamage * (1.0f + (killerId != Controller.Index ? PenalityCurve.Evaluate((float)HeldItems.Count / (float)weaponLimit) * PenalityMultiplier : -0.25f)));
         if (CurrentHealth <= 0)
         {
             ScoreTracker.Instance.RecordKill(killerId, Controller.Index);

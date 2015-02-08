@@ -87,7 +87,7 @@ public class UI : MonoBehaviour
             var victors = ScoreTracker.Instance.Scores.Where(score => score.kills == maxKills);
             var minDeath = ScoreTracker.Instance.Scores.Min(score => score.deaths);
             victors = victors.Where(score => score.deaths == minDeath);
-            var victor = victors.SingleOrDefault();
+            var victor = victors.Any() ? victors.SingleOrDefault() : null;
             if (victor != null) _victor = victor.playerId;
             else _victor = -1;
 
@@ -102,7 +102,7 @@ public class UI : MonoBehaviour
         if (_victory > 0)
         {
             _victory += Time.deltaTime;
-            if (_victory >= VictoryTIme) { _victory = 0; _victor = -1; CountDown.Clear(); }
+            if (_victory >= VictoryTIme) { _victory = 0; _victor = -1; CountDown.Clear(); ScoreTracker.Instance.Scores.Clear(); }
         }
         for (int i = 0; i < 6; i++)
         {
@@ -122,7 +122,7 @@ public class UI : MonoBehaviour
                         _timer = Timer;
                     }
                 }
-                else if (Timer != 0)
+                else if (Timer != 0 && _victory != 0)
                 {
                     timeText.rectTransform.localScale = Vector2.one * (0.7f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.1f));
                     timeText.text = "timeleft   " + Mathf.FloorToInt(_timer);
