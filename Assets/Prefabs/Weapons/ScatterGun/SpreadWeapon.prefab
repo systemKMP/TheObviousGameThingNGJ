@@ -129,10 +129,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used: 0
   HoverHeight: 5
+  Effects: []
   ammo: 10
-  projectile: {fileID: 11482458, guid: ad95cbe73c25ca2469d3e52b7dc37c88, type: 2}
+  projectile: {fileID: 11414464, guid: b85f9e1ce4885074383e456e55e8cefb, type: 2}
   attackInterval: 2
   Clip: {fileID: 8300000, guid: b57914569ce0e8f488a53e17c9448387, type: 3}
+  angularVelocityMin: 0
+  angularVelocityMax: 0
   bullets: 5
   spreadAngle: 60
 --- !u!212 &21250696
