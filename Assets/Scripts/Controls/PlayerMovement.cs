@@ -134,25 +134,35 @@ public class PlayerMovement : MonoBehaviour
         return hit.Count(d => d.distance < 2) > 2;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.3f))
-        {
-            _jumps = MaxJumps;
-            if (!_grounds.Contains(collision.transform)) _grounds.Add(collision.transform);
-        }
-    }
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.contacts.Any(contact => Vector2.Dot(contact.normal, Vector2.up) > 0.3f))
+    //    {
+    //        _jumps = MaxJumps;
+    //        if (!_grounds.Contains(collision.transform)) _grounds.Add(collision.transform);
+    //    }
+    //}
 
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (_grounds.Contains(collision.transform)) _grounds.Remove(collision.transform);
-    }
+    //public void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (_grounds.Contains(collision.transform)) _grounds.Remove(collision.transform);
+    //}
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.7f))
-        {
-            _direction = 0;
+        foreach (var col in collision.contacts){
+            var dir = Mathf.Abs(Mathf.Abs(Vector2.Dot(col.normal, Vector2.right)));
+            if ((_direction > 0.01f && dir > 0.7f && col.normal.x < 0.0f) ||
+                (_direction < -0.01f && dir > 0.7f && col.normal.x > 0.0f))
+            {
+                _direction = 0;
+                break;
+            }
+
         }
+        //if (collision.contacts.Any(contact => Mathf.Abs(Vector2.Dot(contact.normal, Vector2.right)) > 0.7f))
+        //{
+        //    _direction = 0;
+        //}
     }
 }

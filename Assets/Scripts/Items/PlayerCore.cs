@@ -76,7 +76,7 @@ public class PlayerCore : MonoBehaviour
         Audio.clip = HitClips[Random.Range(0, HitClips.Length)];
         Audio.Play();
 
-        CurrentHealth -= Mathf.FloorToInt(projectileDamage * (1 + PenalityCurve.Evaluate((float)HeldItems.Count / weaponLimit) * PenalityMultiplier));
+        CurrentHealth -= Mathf.FloorToInt((float)projectileDamage * (1.0f + PenalityCurve.Evaluate((float)HeldItems.Count / (float)weaponLimit) * PenalityMultiplier));
         if (CurrentHealth <= 0)
         {
             ScoreTracker.Instance.RecordKill(killerId, Controller.Index);
