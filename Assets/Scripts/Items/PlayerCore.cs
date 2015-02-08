@@ -67,7 +67,7 @@ public class PlayerCore : MonoBehaviour
         }
 
         if (Controller)
-            if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth, Controller.Index);
+            if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth*2, Controller.Index);
     }
 
     public void Damage(int projectileDamage, int killerId)

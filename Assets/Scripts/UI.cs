@@ -49,10 +49,10 @@ public class UI : MonoBehaviour
             : FindChild("Hint", transform).GetComponent<Text>();
         var timeText = FindChild("Time", transform) == null
             ? null
-            : FindChild("Time", transform).GetComponent<Text>();
+            : FindChild("Time", transform).GetComponentInChildren<Text>();
         var winText = FindChild("Win", transform) == null
             ? null
-            : FindChild("Win", transform).GetComponent<Text>();
+            : FindChild("Win", transform).GetComponentInChildren<Text>();
         if (title != null)
         {
             if (hint != null)
@@ -65,8 +65,8 @@ public class UI : MonoBehaviour
 
         if (winText != null)
         {
-            winText.rectTransform.localScale = _victory > 0
-                ? Vector2.one * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 3) * 0.2f))
+            winText.rectTransform.parent.localScale = _victory > 0
+                ? new Vector2(1 / 0.11f, 1 / 0.73f) * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 3) * 0.2f))
                 : Vector2.zero;
             if (_victor == 0)
             {
@@ -111,7 +111,7 @@ public class UI : MonoBehaviour
 
                 if (ScoreTracker.Instance.Scores.Count == 0)
                 {
-                    timeText.rectTransform.localScale = Vector2.one * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.2f));
+                    timeText.rectTransform.parent.localScale = new Vector2(1/0.11f, 1/0.73f) * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.2f));
                     if (i > 0)
                     {
                         if (Input.GetKeyDown("joystick " + i + " button 5")) Timer += 30;
@@ -122,14 +122,14 @@ public class UI : MonoBehaviour
                         _timer = Timer;
                     }
                 }
-                else if (Timer != 0 && _victory != 0)
+                else if (Timer != 0 && _victory == 0)
                 {
-                    timeText.rectTransform.localScale = Vector2.one * (0.7f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.1f));
+                    timeText.rectTransform.parent.localScale = new Vector2(1/0.11f,1/0.73f) * (0.5f + Mathf.Abs(Mathf.Cos(Time.time * 2) * 0.1f));
                     timeText.text = "timeleft   " + Mathf.FloorToInt(_timer);
                 }
                 else
                 {
-                    timeText.rectTransform.localScale = Vector2.Lerp(timeText.rectTransform.localScale, Vector2.zero, 0.2f);
+                    timeText.rectTransform.parent.localScale = Vector2.Lerp(timeText.rectTransform.parent.localScale, Vector2.zero, 0.2f);
                 }
             }
 
