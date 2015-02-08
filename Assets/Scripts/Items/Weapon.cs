@@ -64,7 +64,11 @@ public class Weapon : ItemCore {
         gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
         gameObject.GetComponent<Collider2D>().enabled = true;
         gameObject.transform.parent = null;
-        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), weaponOwner.GetComponent<Collider2D>());
+        foreach (var collider in weaponOwner.GetComponents<Collider2D>())
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collider);
+       
+        }
         used = true;
     }
 

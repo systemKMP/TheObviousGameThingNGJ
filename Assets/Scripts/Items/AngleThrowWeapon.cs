@@ -10,6 +10,7 @@ public class AngleThrowWeapon : Weapon {
     {
         var insProj = Instantiate(projectile, transform.position + transform.parent.localScale.x * Vector3.right * 1.2f + Vector3.up * 1.2f , Quaternion.identity) as Projectile;
 
+
         Physics2D.IgnoreCollision(insProj.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
 
         float angle = (thorwAngle + Random.Range(-randomRange, randomRange)) * Mathf.Deg2Rad;

@@ -19,6 +19,9 @@ GameObject:
   - 82: {fileID: 8281660}
   - 58: {fileID: 5872960}
   - 60: {fileID: 6020404}
+  - 58: {fileID: 5856636}
+  - 58: {fileID: 5856638}
+  - 58: {fileID: 5856640}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -33,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.9458199, y: 10.9578094, z: 0}
+  m_LocalPosition: {x: 19.3094349, y: -13.6848345, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,6 +56,39 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5856636
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .620000005
+  m_Center: {x: 1.87, y: -.930000007}
+--- !u!58 &5856638
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .529999971
+  m_Center: {x: 1.09000003, y: -1.04999995}
+--- !u!58 &5856640
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .50999999
+  m_Center: {x: -1.24000001, y: -.99000001}
 --- !u!58 &5872960
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -62,15 +98,15 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: 1.5
-  m_Center: {x: 0, y: -1.25}
+  m_Radius: 1.07000005
+  m_Center: {x: 0, y: -1.73000002}
 --- !u!60 &6020404
 PolygonCollider2D:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Poly:

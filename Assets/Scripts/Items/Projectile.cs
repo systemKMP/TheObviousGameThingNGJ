@@ -47,13 +47,16 @@ public class Projectile : MonoBehaviour
 
     public void ProperDestroy()
     {
-        if (HitPrefab != null)
+        if (Application.isPlaying)
         {
-            Instantiate(HitPrefab, transform.position, Quaternion.identity);
-        }
-        if (destroyEffect != null)
-        {
-            Destroy(Instantiate(destroyEffect, transform.position, Quaternion.identity), 1.0f);
+            if (HitPrefab != null)
+            {
+                Instantiate(HitPrefab, transform.position, Quaternion.identity);
+            }
+            if (destroyEffect != null)
+            {
+                Destroy(Instantiate(destroyEffect, transform.position, Quaternion.identity), 1.0f);
+            }
         }
         FreeTrail();
         Destroy(gameObject);
@@ -98,11 +101,13 @@ public class Projectile : MonoBehaviour
 
     public void SetOwner(ref PlayerCore owner)
     {
-
         this.projectileOwner = owner;
         if (!damageSelf && owner != null)
         {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), owner.GetComponent<Collider2D>());
+            foreach (var collider in owner.GetComponents<Collider2D>())
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collider);
+            }
         }
     }
 
