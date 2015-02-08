@@ -128,11 +128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used: 0
-  HoverHeight: 4
+  HoverHeight: 5.5
+  Effects: []
   ammo: 3
   projectile: {fileID: 11474882, guid: 48ac0579383a3634e92d8d260ee82bf1, type: 2}
   attackInterval: 1.29999995
   Clip: {fileID: 8300000, guid: 1a67641e9d8f7824988ced1915c76fc8, type: 3}
+  angularVelocityMin: 0
+  angularVelocityMax: 0
 --- !u!212 &21229070
 SpriteRenderer:
   m_ObjectHideFlags: 1

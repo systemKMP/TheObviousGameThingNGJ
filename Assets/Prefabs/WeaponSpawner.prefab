@@ -45,6 +45,8 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
+  DropEffect: {fileID: 161454, guid: 666aff21aeaa4c4468b5cb47b8e2aeb1, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

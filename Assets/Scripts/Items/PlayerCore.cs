@@ -21,6 +21,8 @@ public class PlayerCore : MonoBehaviour
 
     public AudioClip[] HitClips = new AudioClip[0];
 
+    public GameObject DropEffect;
+
     private Color _originalColor;
     private SpriteRenderer _sprite;
     private float _hit;
@@ -88,16 +90,19 @@ public class PlayerCore : MonoBehaviour
                 HeldItems[i].transform.parent = null;
                 HeldItems[i].SetOwner(null);
 
+                if (DropEffect != null)
+                {
+                    var effect = (GameObject) Instantiate(DropEffect, HeldItems[i].transform.position, HeldItems[i].transform.rotation);
+                    effect.transform.parent = HeldItems[i].transform;
+                    effect.transform.position += Vector3.forward*1;
+                    HeldItems[i].Effects.Add(effect);
+                }
+
                 HeldItems.RemoveAt(i);
                 i--;
 
             }
-
-
-
         }
-
-
 
         Destroy(this.gameObject);
     }
