@@ -15,9 +15,10 @@ GameObject:
   - 212: {fileID: 21283480}
   - 95: {fileID: 9552966}
   - 114: {fileID: 11485278}
-  - 60: {fileID: 6020404}
   - 82: {fileID: 8206686}
   - 82: {fileID: 8281660}
+  - 58: {fileID: 5872960}
+  - 60: {fileID: 6020404}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -32,7 +33,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.011169, y: 7.83788776, z: 0}
+  m_LocalPosition: {x: -42.9458199, y: 10.9578094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,9 +53,20 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5872960
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176090}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: 1.5
+  m_Center: {x: 0, y: -1.25}
 --- !u!60 &6020404
 PolygonCollider2D:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176090}
@@ -329,6 +341,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0ad357c192bdd534cbf9584a432ab821, type: 3}
   - {fileID: 8300000, guid: 08c2e82a35d433d4ba6d25c82dc4c85d, type: 3}
   DropEffect: {fileID: 0}
+  DeathEffect: {fileID: 0}
   weaponLimit: 15
 --- !u!114 &11485278
 MonoBehaviour:
