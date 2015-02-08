@@ -25,7 +25,7 @@ public class PlayerCore : MonoBehaviour
     public AudioClip[] HitClips = new AudioClip[0];
 
     public GameObject DropEffect;
-    public GameObject DeathEffect;
+    public GameObject[] DeathEffect;
 
     private Color _originalColor;
     private SpriteRenderer _sprite;
@@ -66,7 +66,8 @@ public class PlayerCore : MonoBehaviour
             _sprite.color = _originalColor;
         }
 
-        if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth, Controller.Index);
+        if(Controller)
+            if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth, Controller.Index);
     }
 
     public void Damage(int projectileDamage, int killerId)
@@ -108,7 +109,7 @@ public class PlayerCore : MonoBehaviour
             }
         }
 
-        if (DeathEffect != null) Destroy(Instantiate(DeathEffect, transform.position, Quaternion.identity), 4);
+        if (DeathEffect.Length >= Controller.Index) Destroy(Instantiate(DeathEffect[Controller.Index-1], transform.position, Quaternion.identity), 4);
 
         Destroy(this.gameObject);
     }
