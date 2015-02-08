@@ -16,7 +16,7 @@ public class PlayerSpawner : MonoBehaviour
     public void Awake()
     {
         if (_instance == null) _instance = this;
-        _spawnPoints.Add(this);
+        _instance._spawnPoints.Add(this);
     }
 
     public void Update()
