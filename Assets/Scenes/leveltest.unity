@@ -3864,6 +3864,7 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
 --- !u!4 &429089810
 Transform:
   m_ObjectHideFlags: 0
@@ -5057,6 +5058,7 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
 --- !u!4 &658461489
 Transform:
   m_ObjectHideFlags: 0
@@ -10063,6 +10065,7 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
 --- !u!4 &1384173295
 Transform:
   m_ObjectHideFlags: 0
@@ -11849,6 +11852,7 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
 --- !u!4 &1652080633
 Transform:
   m_ObjectHideFlags: 0
@@ -12276,6 +12280,7 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
 --- !u!4 &1727403667
 Transform:
   m_ObjectHideFlags: 0
@@ -15237,6 +15242,7 @@ MonoBehaviour:
   - 2
   SpawnMin: 2
   SpawnMax: 4
+  AttachEffect: {fileID: 189280, guid: 2ef0d3e79c7131441ac8472a7e8d4b08, type: 2}
 --- !u!4 &2023252140
 Transform:
   m_ObjectHideFlags: 0

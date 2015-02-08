@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 public class ItemCore : MonoBehaviour
@@ -8,6 +9,7 @@ public class ItemCore : MonoBehaviour
 
     protected PlayerCore weaponOwner;
     public float HoverHeight;
+    public List<GameObject> Effects = new List<GameObject>();
 
     public virtual void Update()
     {
@@ -28,5 +30,9 @@ public class ItemCore : MonoBehaviour
     public virtual void SetOwner(PlayerCore weaponOwner)
     {
         this.weaponOwner = weaponOwner;
+        foreach (var effect in Effects)
+        {
+            Destroy(effect);
+        }
     }
 }

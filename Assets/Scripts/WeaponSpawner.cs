@@ -10,6 +10,8 @@ public class WeaponSpawner : MonoBehaviour
     public float SpawnMin = 2;
     public float SpawnMax = 4;
 
+    public GameObject AttachEffect;
+
     private float _time;
     private Weapon _currentWeapon;
 
@@ -34,6 +36,12 @@ public class WeaponSpawner : MonoBehaviour
                     if (result < accum)
                     {
                         _currentWeapon = (Weapon) Instantiate(Weapons[i], transform.position, transform.rotation);
+                        if (AttachEffect != null)
+                        {
+                            var effect = (GameObject) Instantiate(AttachEffect, transform.position, transform.rotation);
+                            effect.transform.parent = _currentWeapon.transform;
+                            _currentWeapon.Effects.Add(effect);
+                        }
                         break;
                     }
                     

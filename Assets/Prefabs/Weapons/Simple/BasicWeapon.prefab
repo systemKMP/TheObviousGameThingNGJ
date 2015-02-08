@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used: 0
-  HoverHeight: 4
+  HoverHeight: 5
   ammo: 20
   projectile: {fileID: 11482458, guid: ad95cbe73c25ca2469d3e52b7dc37c88, type: 2}
   attackInterval: .5
