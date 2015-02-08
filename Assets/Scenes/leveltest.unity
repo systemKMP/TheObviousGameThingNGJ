@@ -3859,7 +3859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 0}
   Rates:
   - 2
   SpawnMin: 2
@@ -5053,7 +5053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 0}
   Rates:
   - 2
   SpawnMin: 2
@@ -8446,10 +8446,11 @@ MonoBehaviour:
   HitPrefab: {fileID: 0}
   projectileSpeed: 0
   survivalTime: .300000012
-  projectileDamage: 50
+  projectileDamage: 250
   damageSelf: 1
   trail: {fileID: 0}
   destroyEffect: {fileID: 0}
+  explodeOnTerrain: 0
   collisionValidityTimer: .100000001
 --- !u!199 &1317667142
 ParticleSystemRenderer:
@@ -10060,7 +10061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 0}
   Rates:
   - 2
   SpawnMin: 2
@@ -12275,7 +12276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 11419454, guid: aff4bf5416d45b44caf4e8d9087d3ea4, type: 2}
+  - {fileID: 0}
   Rates:
   - 2
   SpawnMin: 2
