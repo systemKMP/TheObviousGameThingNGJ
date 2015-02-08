@@ -18,6 +18,8 @@ public class Projectile : MonoBehaviour
     public ParticleSystem trail;
     public GameObject destroyEffect;
 
+    public bool explodeOnTerrain = false;
+
 
 
     protected virtual void Start()

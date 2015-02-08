@@ -18,9 +18,9 @@ public class SpreadShotWeapon : Weapon {
             ProjectileDef pDef = new ProjectileDef() { projectileObject = projectile, spawnLocation = transform.position + transform.parent.localScale.x * Vector3.right * 2.0f };
 
             float angle = (spreadAngle / 2 - spreadAngle / (bullets-1) * i) * Mathf.Deg2Rad;
-            Debug.Log(angle);
+
             Vector2 shotDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-            Debug.Log(shotDirection);
+
             shotDirection.x *= transform.parent.localScale.x;
             if (index > 0)
             {

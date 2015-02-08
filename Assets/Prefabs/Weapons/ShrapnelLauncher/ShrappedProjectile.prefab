@@ -70,11 +70,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPrefab: {fileID: 0}
   projectileSpeed: 20
-  survivalTime: 2
-  projectileDamage: 30
+  survivalTime: 1.29999995
+  projectileDamage: 25
   damageSelf: 0
   trail: {fileID: 19891630, guid: 7efc352218332db42a1b4c9d9e0d81ca, type: 2}
   destroyEffect: {fileID: 112092, guid: 60aeed8b5126a614b855a95e30f22cec, type: 2}
+  explodeOnTerrain: 0
 --- !u!212 &21267578
 SpriteRenderer:
   m_ObjectHideFlags: 1

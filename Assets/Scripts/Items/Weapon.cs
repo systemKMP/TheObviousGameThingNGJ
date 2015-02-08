@@ -12,6 +12,8 @@ public class Weapon : ItemCore {
     public float attackInterval;
     public AudioClip Clip;
 
+    public float angularVelocityMin = 0.0f;
+    public float angularVelocityMax = 0.0f;
 
     protected bool readyForAttack = true;
     protected float attackTimer;
@@ -71,12 +73,14 @@ public class Weapon : ItemCore {
 
         var insProj = Instantiate(projectile, transform.position + transform.parent.localScale.x * Vector3.right * 0.7f, Quaternion.identity) as Projectile;
         if (index > 0){
-            insProj.SetDirection(transform.parent.localScale.x * Vector2.right + new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
+            insProj.SetDirection(transform.parent.localScale.x * Vector2.right + new Vector2(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)), Random.Range(angularVelocityMin, angularVelocityMax));
         } else {
-            insProj.SetDirection(transform.parent.localScale.x * Vector2.right);
+            insProj.SetDirection(transform.parent.localScale.x * Vector2.right, Random.Range(angularVelocityMin, angularVelocityMax));
         }
         Screenshaker.Shake(0.4f, Vector2.right * transform.parent.localScale.x);
         
+
+
         insProj.SetOwner(ref weaponOwner);
     }
 

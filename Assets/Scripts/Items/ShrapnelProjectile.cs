@@ -9,12 +9,12 @@ public class ShrapnelProjectile : Projectile {
     public int bullets = 3;
     public float spreadAngle = 60;
 
+    private bool collidedWithTerrain = false;
     private bool collidedWithPlayer = false;
     public bool splitOnPlayerCollision = false;
 
     private Vector2 intialVelocity;
 
-    [Range(0.0f, 20.0f)]
     public float MaxRandomOffset;
 
     public float angularStrengthMax;
@@ -29,7 +29,7 @@ public class ShrapnelProjectile : Projectile {
     void OnDestroy()
     {
 
-        if ((splitOnPlayerCollision && collidedWithPlayer) || !collidedWithPlayer)
+        if ((splitOnPlayerCollision && collidedWithPlayer) || !collidedWithPlayer || (collidedWithTerrain && explodeOnTerrain))
         {
             List<ProjectileDef> projectilesToSpawn = new List<ProjectileDef>();
 
@@ -39,7 +39,7 @@ public class ShrapnelProjectile : Projectile {
 
                 float angle = (spreadAngle / 2 - spreadAngle / (bullets - 1) * i + Random.Range(-MaxRandomOffset, MaxRandomOffset)) * Mathf.Deg2Rad;
 
-                Vector2 shotDirection = new Vector2(Mathf.Acos(angle), Mathf.Asin(angle));
+                Vector2 shotDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 
                 if (intialVelocity.x < 0.0f)
                 {
@@ -62,7 +62,7 @@ public class ShrapnelProjectile : Projectile {
                 insProj.SetDirection(proj.velocity, angVelocity);
 
                 insProj.SetOwner(ref proj.owner);
-
+                Debug.Log("spawning");
                 
             }
         }
@@ -71,7 +71,6 @@ public class ShrapnelProjectile : Projectile {
 
     protected override void OnCollisionEnter2D(Collision2D col)
     {
-
         var gObj = col.gameObject;
         if (gObj.layer == 8) //if collides with player
         {
@@ -82,6 +81,11 @@ public class ShrapnelProjectile : Projectile {
                 collidedWithPlayer = true;
                 ProperDestroy();
             }
+        }
+        else if (gObj.layer == 11)
+        {
+            collidedWithTerrain = true;
+            ProperDestroy();
         }
     }
     
