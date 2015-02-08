@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public AnimationCurve AirWalkCurve;
     public float AirMaxWalkSpeed;
     public float AirWalkFloatiness;
+    public float JumpDuration;
     public float JumpForce;
     public int MaxJumps;
     public float StepTime = 0.2f;
@@ -77,8 +78,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Mover.Move = new Vector2(_walk, 0);
-        if(_jump != 0)rigidbody2D.velocity = Vector2.up*_jump + Vector2.right*rigidbody2D.velocity.x;
-        _jump = 0;
+        if (_jump != 0) rigidbody2D.velocity = Vector2.up * JumpForce + Vector2.right * rigidbody2D.velocity.x;
+        if (_jump > 0) _jump -= Time.deltaTime;
+        else _jump = 0;
     }
 
     public void Walk(float direction)
@@ -105,7 +107,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!CanJump()) return;
         _jumps--;
-        _jump += JumpForce;
+        _jump += JumpDuration;
+    }
+
+    public void StopJump()
+    {
+        _jump = 0;
     }
 
     public bool CanJump()
@@ -124,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.Raycast(transform.position-Vector3.right*0.4f-Vector3.up, -Vector2.up, float.PositiveInfinity,
                 1 << LayerMask.NameToLayer("Terrain"))
         };
-        return hit.Count(d => d.distance<2) > 2;
+        return hit.Count(d => d.distance < 2) > 2;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

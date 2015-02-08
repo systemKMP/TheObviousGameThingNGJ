@@ -14,6 +14,7 @@ public class KeyboardController : PlayerController
         Player.Walk(Input.GetAxis(WalkInputAxis));
 
         if (Input.GetKeyDown(JumpInput)) Player.Jump();
+        if (Input.GetKeyUp(JumpInput)) Player.StopJump();
 
         if (Input.GetKey(ShootInput)) Core.UseItems();
     }

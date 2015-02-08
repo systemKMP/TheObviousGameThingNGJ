@@ -38,6 +38,7 @@ public class JoystickController : PlayerController
 
         // Jump
         if (Input.GetKeyDown("joystick " + Index + " button 0")) Player.Jump();
+        if (Input.GetKeyUp("joystick " + Index + " button 0")) Player.StopJump();
 
         // Shoot
         if (Input.GetAxis("Joystick_" + Index + "_Trigger") < 0) Core.UseItems();
