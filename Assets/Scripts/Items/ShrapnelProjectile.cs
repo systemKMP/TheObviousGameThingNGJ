@@ -81,7 +81,7 @@ public class ShrapnelProjectile : Projectile {
                 ProperDestroy();
             }
         }
-        else if (gObj.layer == 11)
+        else if (gObj.layer == 11 && explodeOnTerrain)
         {
             collidedWithTerrain = true;
             ProperDestroy();

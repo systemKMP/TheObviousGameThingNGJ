@@ -1,19 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &192540
+--- !u!1 &184030
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 492540}
-  - 198: {fileID: 19892540}
-  - 199: {fileID: 19992540}
-  - 114: {fileID: 11492542}
-  - 58: {fileID: 5892542}
-  - 114: {fileID: 11497746}
-  - 82: {fileID: 8233236}
+  - 4: {fileID: 484030}
+  - 198: {fileID: 19884030}
+  - 199: {fileID: 19984030}
+  - 114: {fileID: 11484030}
+  - 58: {fileID: 5884032}
+  - 82: {fileID: 8284032}
+  - 114: {fileID: 11484032}
   m_Layer: 9
   m_Name: Explosion64
   m_TagString: Untagged
@@ -21,16 +21,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &192542
+--- !u!1 &184032
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 492542}
-  - 198: {fileID: 19892542}
-  - 199: {fileID: 19992542}
+  - 4: {fileID: 484032}
+  - 198: {fileID: 19884032}
+  - 199: {fileID: 19984032}
   m_Layer: 0
   m_Name: Particle System 2
   m_TagString: Untagged
@@ -38,48 +38,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &492540
+--- !u!4 &484030
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -3.85369205, y: 13.3068647, z: 0}
+  m_LocalPosition: {x: 5.86613703, y: -10.056673, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 492542}
+  - {fileID: 484032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &492542
+--- !u!4 &484032
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192542}
+  m_GameObject: {fileID: 184032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: .999999762, z: .999999762}
   m_Children: []
-  m_Father: {fileID: 492540}
+  m_Father: {fileID: 484030}
   m_RootOrder: 0
---- !u!58 &5892542
+--- !u!58 &5884032
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Radius: 4
   m_Center: {x: 0, y: 0}
---- !u!82 &8233236
+--- !u!82 &8284032
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 0}
@@ -132,12 +132,12 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11492542
+--- !u!114 &11484030
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8ec78c3a1fb7b245896ce1c0cfb8502, type: 3}
@@ -146,24 +146,24 @@ MonoBehaviour:
   HitPrefab: {fileID: 0}
   projectileSpeed: 0
   survivalTime: .300000012
-  projectileDamage: 200
+  projectileDamage: 150
   damageSelf: 1
   trail: {fileID: 0}
   destroyEffect: {fileID: 0}
   explodeOnTerrain: 0
   collisionValidityTimer: .100000001
---- !u!114 &11497746
+--- !u!114 &11484032
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e179d2adfd321344b84b25d3a1739346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 8233236}
+  source: {fileID: 8284032}
   clips:
   - {fileID: 8300000, guid: ba13f340f6a1a5f408e308a66ea01fbf, type: 3}
   - {fileID: 8300000, guid: b39b2250977cbf64f9c5148e71d31120, type: 3}
@@ -173,12 +173,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ca7a858f5c8e844c98bc37229a3bab7, type: 3}
   - {fileID: 8300000, guid: eaca02bee60da2e4db2212aee662cf7c, type: 3}
   - {fileID: 8300000, guid: 3f728aff00d8ae34883b425da3b3f97e, type: 3}
---- !u!198 &19892540
+--- !u!198 &19884030
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   lengthInSec: .5
   startDelay: 0
   speed: 1
@@ -1225,12 +1225,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!198 &19892542
+--- !u!198 &19884032
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192542}
+  m_GameObject: {fileID: 184032}
   lengthInSec: .5
   startDelay: 0
   speed: 1
@@ -2257,12 +2257,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19992540
+--- !u!199 &19984030
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192540}
+  m_GameObject: {fileID: 184030}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -2289,12 +2289,12 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!199 &19992542
+--- !u!199 &19984032
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192542}
+  m_GameObject: {fileID: 184032}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -2330,6 +2330,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 192540}
+  m_RootGameObject: {fileID: 184030}
   m_IsPrefabParent: 1
   m_IsExploded: 1
