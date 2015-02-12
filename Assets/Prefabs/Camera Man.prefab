@@ -17,6 +17,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &188134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 488134}
+  - 82: {fileID: 8288134}
+  - 114: {fileID: 11471866}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &197782
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +63,6 @@ GameObject:
   - 4: {fileID: 497784}
   - 114: {fileID: 11497782}
   - 114: {fileID: 11497784}
-  - 82: {fileID: 8248806}
   m_Layer: 0
   m_Name: Camera Man
   m_TagString: Untagged
@@ -66,6 +82,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 497782}
   m_RootOrder: 0
+--- !u!4 &488134
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 497784}
+  m_RootOrder: 1
 --- !u!4 &497782
 Transform:
   m_ObjectHideFlags: 1
@@ -86,10 +114,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.8000002, y: -.5, z: -20}
+  m_LocalPosition: {x: -6.25838947, y: 160.125687, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497782}
+  - {fileID: 488134}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!20 &2097784
@@ -131,12 +160,12 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197782}
   m_Enabled: 1
---- !u!82 &8248806
+--- !u!82 &8288134
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197784}
+  m_GameObject: {fileID: 188134}
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 6d6cca366b27876428d05cbaefc458b9, type: 3}
@@ -208,6 +237,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: .143999994
+--- !u!114 &11471866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80feac143b5109449fcc54e04fdd78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11497782
 MonoBehaviour:
   m_ObjectHideFlags: 1
