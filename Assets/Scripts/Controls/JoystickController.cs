@@ -10,8 +10,11 @@ public class JoystickController : PlayerController
         {
             _index = value;
             _calibrated = false;
+            ActualIndex = value;
         }
     }
+
+    public int ActualIndex;
 
     private bool _calibrated = true;
     private float _dead;
@@ -21,8 +24,8 @@ public class JoystickController : PlayerController
     {
         if (!_calibrated)
         {
-            var x = Input.GetAxis("Joystick_" + Index + "_Left_x");
-            var y = Input.GetAxis("Joystick_" + Index + "_Left_y");
+            var x = Input.GetAxis("Joystick_" + ActualIndex + "_Left_x");
+            var y = Input.GetAxis("Joystick_" + ActualIndex + "_Left_y");
             var d = Mathf.Sqrt(x * x + y * y);
             if (d < 0.4f && d != 0)
             {
@@ -32,15 +35,15 @@ public class JoystickController : PlayerController
         }
 
         // Walk
-        var input = Input.GetAxis("Joystick_" + Index + "_Left_x");
+        var input = Input.GetAxis("Joystick_" + ActualIndex + "_Left_x");
         if (Mathf.Abs(input) < _dead) input = 0;
         Player.Walk(input);
 
         // Jump
-        if (Input.GetKeyDown("joystick " + Index + " button 0")) Player.Jump();
-        if (Input.GetKeyUp("joystick " + Index + " button 0")) Player.StopJump();
+        if (Input.GetKeyDown("joystick " + ActualIndex + " button 0")) Player.Jump();
+        if (Input.GetKeyUp("joystick " + ActualIndex + " button 0")) Player.StopJump();
 
         // Shoot
-        if (Input.GetAxis("Joystick_" + Index + "_Trigger") < 0) Core.UseItems();
+        if (Input.GetAxis("Joystick_" + ActualIndex + "_Trigger") < 0) Core.UseItems();
     }
 }

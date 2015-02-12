@@ -48,6 +48,7 @@ public class PlayerSpawner : MonoBehaviour
                 if (index > 4) index -= 4;
             }
             Spawn(i, index, controller);
+            ((JoystickController)controller).ActualIndex = i;
         }
 
         if (_players.ContainsKey(0) && _players[0] == null) _players.Remove(0);
