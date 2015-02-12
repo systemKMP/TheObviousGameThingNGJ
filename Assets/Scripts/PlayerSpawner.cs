@@ -13,6 +13,9 @@ public class PlayerSpawner : MonoBehaviour
     public AudioClip[] SpawnClips;
     public GameObject[] SpawnEffect;
 
+    private Vector3 averageplayer;
+    private float maxDist;
+
     public void Awake()
     {
         if (_instance == null) _instance = this;
@@ -22,50 +25,50 @@ public class PlayerSpawner : MonoBehaviour
     public void Update()
     {
         if (_instance != this) return;
+        PlayerMovement player;
+        PlayerController controller;
         var players = GameObject.FindGameObjectsWithTag("Player");
-        var averageplayer = players.Aggregate(Vector3.zero, (pre, go) => pre + go.transform.position) / players.Length;
-        var maxDist = _spawnPoints.Max(spawner => Vector3.Distance(spawner.transform.position, averageplayer));
+        averageplayer = players.Aggregate(Vector3.zero, (pre, go) => pre + go.transform.position) / players.Length;
+        maxDist = _spawnPoints.Max(spawner => Vector3.Distance(spawner.transform.position, averageplayer));
 
         for (int i = 1; i <= 8; i++)
         {
             if (_players.ContainsKey(i) && _players[i] == null) _players.Remove(i);
             if (_players.ContainsKey(i) || !Input.GetKey("joystick " + i + " button 2") || !UI.Instance.CanSpawn) continue;
 
-            var player = (PlayerMovement)Instantiate(PlayerPrefab, 
-                (_spawnPoints.SingleOrDefault(spawner => Vector3.Distance(spawner.transform.position, averageplayer) == maxDist)??
-                 _spawnPoints[Random.Range(0,_spawnPoints.Count)]).transform.position,
-                Quaternion.identity);
-            var controller = player.GetComponent<JoystickController>() ??
+            player = (PlayerMovement)Instantiate(PlayerPrefab);
+            controller = player.GetComponent<JoystickController>() ??
                              player.gameObject.AddComponent<JoystickController>();
-            controller.Player = player;
-            controller.Index = i;
-            _players[i] = player;
-            Screenshaker.Shake(1, Vector2.up);
-            ScoreTracker.Instance.RegisterPlayer(i, player.GetComponent<PlayerCore>());
-            GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
-            GetComponent<AudioSource>().Play();
-            if(SpawnEffect.Length >= i) Destroy(Instantiate(SpawnEffect[i-1],player.transform.position,Quaternion.identity),4);
+            if (player.GetComponent<KeyboardController>()) Destroy(player.GetComponent<KeyboardController>());
+            Spawn(i, i, controller);
         }
 
         if (_players.ContainsKey(0) && _players[0] == null) _players.Remove(0);
-        if (!_players.ContainsKey(0) && Input.GetKey(KeyCode.Space) && UI.Instance.CanSpawn)
+        if (!_players.ContainsKey(0) && Input.GetKey(KeyCode.X) && UI.Instance.CanSpawn)
         {
-            var keyboardplayer = (PlayerMovement)Instantiate(PlayerPrefab,
-                (_spawnPoints.SingleOrDefault(spawner => Vector3.Distance(spawner.transform.position, averageplayer) == maxDist) ??
-                 _spawnPoints[Random.Range(0, _spawnPoints.Count)]).transform.position,
-                Quaternion.identity);
-            var keyboardcontroller = keyboardplayer.GetComponent<KeyboardController>() ??
-                                     keyboardplayer.gameObject.AddComponent<KeyboardController>();
-            keyboardcontroller.Player = keyboardplayer;
-            keyboardcontroller.WalkInputAxis = "Horizontal";
-            keyboardcontroller.JumpInput = KeyCode.W;
-            _players[0] = keyboardplayer;
-            Screenshaker.Shake(1, Vector2.up);
-            ScoreTracker.Instance.RegisterPlayer(0, keyboardplayer.GetComponent<PlayerCore>());
-            GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
-            GetComponent<AudioSource>().Play();
-            if (SpawnEffect.Length > 0) Destroy(Instantiate(SpawnEffect[0], keyboardplayer.transform.position, Quaternion.identity), 4);
+            player = (PlayerMovement)Instantiate(PlayerPrefab);
+            controller = player.GetComponent<KeyboardController>() ??
+                                     player.gameObject.AddComponent<KeyboardController>();
+            if (player.GetComponent<JoystickController>()) Destroy(player.GetComponent<JoystickController>());
+            Spawn(0, 1, controller);
         }
+    }
+
+    private void Spawn(int index, int slot, PlayerController controller)
+    {
+        var player = controller.GetComponent<PlayerMovement>();
+        controller.transform.position =
+            (_spawnPoints.SingleOrDefault(
+                spawner => Vector3.Distance(spawner.transform.position, averageplayer) == maxDist) ??
+             _spawnPoints[Random.Range(0, _spawnPoints.Count)]).transform.position;
+        controller.Player = player;
+        controller.Index = index;
+        _players[index] = player;
+        Screenshaker.Shake(1, Vector2.up);
+        ScoreTracker.Instance.RegisterPlayer(index, index, player.GetComponent<PlayerCore>());
+        GetComponent<AudioSource>().clip = SpawnClips[Random.Range(0, SpawnClips.Length)];
+        GetComponent<AudioSource>().Play();
+        if (SpawnEffect.Length >= index) Destroy(Instantiate(SpawnEffect[Mathf.Clamp(index - 1, 0, SpawnEffect.Length)], player.transform.position, Quaternion.identity), 4);
     }
 
     public void OnDrawGizmos()

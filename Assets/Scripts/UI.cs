@@ -19,7 +19,7 @@ public class UI : MonoBehaviour
     public static UI Instance;
     public float Timer;
 
-    public bool CanSpawn { get { return _victory == 0; } }
+    public bool CanSpawn { get { return _victory == 0 && ScoreTracker.Instance.Scores.Count < 4; } }
 
     private int _victor;
     private float _victory;

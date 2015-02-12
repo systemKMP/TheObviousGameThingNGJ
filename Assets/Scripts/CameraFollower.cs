@@ -51,7 +51,6 @@ public class CameraFollower : MonoBehaviour
 
             if ((maxY - minY) + PlayerMarginY < verCamDif)
             {
-                Debug.Log("vert fix");
                 targetOrth = (maxY - minY) / 2.0f + PlayerMarginY;
             }
 

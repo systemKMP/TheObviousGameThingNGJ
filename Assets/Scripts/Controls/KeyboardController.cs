@@ -3,9 +3,9 @@ using System.Collections;
 
 public class KeyboardController : PlayerController
 {
-    public string WalkInputAxis;
-    public KeyCode JumpInput;
-    public KeyCode ShootInput = KeyCode.T;
+    public string WalkInputAxis = "Horizontal";
+    public KeyCode JumpInput = KeyCode.W;
+    public KeyCode ShootInput = KeyCode.F;
 
     public void Update()
     {

@@ -66,8 +66,10 @@ public class PlayerCore : MonoBehaviour
             _sprite.color = _originalColor;
         }
 
-        if (Controller)
+        if (Controller && Controller is JoystickController)
             if (Input.GetKey("joystick " + Controller.Index + " button 6")) Damage(CurrentHealth*2, Controller.Index);
+        if (Controller && Controller is KeyboardController)
+            if (Input.GetKey(KeyCode.Q)) Damage(CurrentHealth * 2, Controller.Index);
     }
 
     public void Damage(int projectileDamage, int killerId)

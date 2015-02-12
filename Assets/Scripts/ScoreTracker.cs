@@ -28,7 +28,7 @@ public class ScoreTracker
         playerScores = new List<PlayerScore>();
     }
 
-    public void RegisterPlayer(int id, PlayerCore core)
+    public void RegisterPlayer(int id, int actualId, PlayerCore core)
     {
         var scoreBoard = playerScores.SingleOrDefault(score => score.playerId == id);
         if (scoreBoard == null)
