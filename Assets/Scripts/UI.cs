@@ -11,13 +11,14 @@ public class UI : MonoBehaviour
     public float LogoSize = 115;
     public float ShakeAmount = 50;
     public float VictoryTIme = 15;
+    public float DefaultTImer = 90;
     public AudioClip VictoryClip;
 
     public Dictionary<int, float> Hit = new Dictionary<int, float>();
     public Dictionary<int, float> CountDown = new Dictionary<int, float>();
 
     public static UI Instance;
-    public float Timer;
+    public static float Timer;
 
     public bool CanSpawn { get { return _victory == 0 && ScoreTracker.Instance.Scores.Count < 4; } }
 
@@ -30,6 +31,7 @@ public class UI : MonoBehaviour
     public void Start()
     {
         Instance = this;
+        Timer = DefaultTImer;
     }
 
     public void Update()
@@ -68,6 +70,7 @@ public class UI : MonoBehaviour
             winText.rectTransform.parent.localScale = _victory > 0
                 ? new Vector2(1 / 0.11f, 1 / 0.73f) * (0.8f + Mathf.Abs(Mathf.Cos(Time.time * 3) * 0.2f))
                 : Vector2.zero;
+            while (_victor > 4) _victor -= 4;
             if (_victor == 0)
             {
                 winText.text = "it's a draw";
@@ -104,7 +107,7 @@ public class UI : MonoBehaviour
             _victory += Time.deltaTime;
             if (_victory >= VictoryTIme) { _victory = 0; _victor = -1; CountDown.Clear(); ScoreTracker.Instance.Scores.Clear(); }
         }
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i <= 4; i++)
         {
             if (timeText != null)
             {
@@ -116,11 +119,16 @@ public class UI : MonoBehaviour
                     {
                         if (Input.GetKeyDown("joystick " + i + " button 5")) Timer += 30;
                         if (Input.GetKeyDown("joystick " + i + " button 4")) Timer -= 30;
-                        if (Timer < 0) Timer = 0;
-
-                        timeText.text = "timer   " + (Timer == 0 ? "ENDLESS" : Timer + " seconds");
-                        _timer = Timer;
+                    } 
+                    else
+                    {
+                        if (Input.GetKeyDown(KeyCode.E)) Timer += 30;
+                        if (Input.GetKeyDown(KeyCode.Q)) Timer -= 30;
                     }
+                    if (Timer < 0) Timer = 0;
+
+                    timeText.text = "timer   " + (Timer == 0 ? "ENDLESS" : Timer + " seconds");
+                    _timer = Timer;
                 }
                 else if (Timer != 0 && _victory == 0)
                 {

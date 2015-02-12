@@ -1137,8 +1137,8 @@ MonoBehaviour:
   LogoSize: 115
   ShakeAmount: 40
   VictoryTIme: 10
-  VictoryClip: {fileID: 0}
-  Timer: 0
+  DefaultTImer: 90
+  VictoryClip: {fileID: 8300000, guid: 34914ab2c8b8e6f47b44d9ec761b785f, type: 3}
 --- !u!114 &11474874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2215,7 +2215,7 @@ RectTransform:
   m_GameObject: {fileID: 143654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22484298}
   - {fileID: 22474890}
@@ -2238,7 +2238,7 @@ RectTransform:
   m_GameObject: {fileID: 143656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22444600}
   - {fileID: 22474896}
@@ -2261,7 +2261,7 @@ RectTransform:
   m_GameObject: {fileID: 143658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22444602}
   - {fileID: 22474892}
@@ -2370,7 +2370,7 @@ RectTransform:
   m_GameObject: {fileID: 160210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22444604}
   - {fileID: 22474898}
@@ -2761,7 +2761,7 @@ RectTransform:
   m_GameObject: {fileID: 177972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22443654}
   m_Father: {fileID: 22474868}
@@ -2779,7 +2779,7 @@ RectTransform:
   m_GameObject: {fileID: 177974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22443656}
   m_Father: {fileID: 22474868}
@@ -2797,7 +2797,7 @@ RectTransform:
   m_GameObject: {fileID: 177976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22443658}
   m_Father: {fileID: 22474868}
@@ -2815,7 +2815,7 @@ RectTransform:
   m_GameObject: {fileID: 177978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22460210}
   m_Father: {fileID: 22474868}
