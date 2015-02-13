@@ -33,7 +33,7 @@ public class ScoreTracker
         var scoreBoard = playerScores.SingleOrDefault(score => score.playerId == id);
         if (scoreBoard == null)
         {
-            scoreBoard = new PlayerScore() { playerId = id, core = core };
+            scoreBoard = new PlayerScore() { playerId = id, actualId = actualId, core = core };
             playerScores.Add(scoreBoard);
         }
         else
@@ -73,6 +73,7 @@ public class ScoreTracker
 public class PlayerScore
 {
     public int playerId;
+    public int actualId;
     public PlayerCore core;
     public int deaths;
     public int kills;

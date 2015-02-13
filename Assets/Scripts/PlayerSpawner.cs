@@ -42,7 +42,7 @@ public class PlayerSpawner : MonoBehaviour
             if (player.GetComponent<KeyboardController>()) Destroy(player.GetComponent<KeyboardController>());
 
             var index = i;
-            while (ScoreTracker.Instance.Scores.Any(score => score.playerId == index))
+            while (ScoreTracker.Instance.Scores.Any(score => score.playerId == index && score.actualId != i))
             {
                 index++;
                 if (index > 4) index -= 4;
